@@ -1,0 +1,51 @@
+# Multi-donor synthetic cohort with a genuine donor-grouped split.
+#
+# The synthetic generator produces six donors with known state assignments and
+# a controllable donor effect, which is what makes a donor-grouped split and
+# its leaking counterpart directly comparable. Use this config to exercise the
+# donor-level metrics that pbmc3k cannot support.
+name: synthetic_donor_split
+output_dir: ../results/synthetic_donor_split
+
+data:
+  source: synthetic
+  donor_key: donor_id
+  label_key: true_state
+  min_genes: 0
+  min_counts: 0
+  max_mito_fraction: 1.0
+  min_cells_per_gene: 0
+  n_top_genes: 500
+
+# 12 donors with a 0.25 test fraction leaves 3 held-out donors, which is the
+# minimum at which a donor-level mean and spread mean anything.
+split:
+  kind: donor
+  test_fraction: 0.25
+  val_fraction: 0.17
+  seed: 0
+
+# Deliberately not a trivially separable cohort: state_effect 0.35 with a
+# donor_effect of 0.3 gives a task where the models actually differ, so the
+# comparison against the marker-score floor carries information. A high
+# state_effect makes every model score 1.000 and the comparison vacuous.
+synthetic:
+  n_donors: 12
+  cells_per_donor: 150
+  state_effect: 0.35
+  donor_effect: 0.3
+  n_background_genes: 400
+  seed: 0
+
+labels:
+  source: annotation
+  states: [resting, activated, cytotoxic, exhausted]
+
+models:
+  baselines: [logistic, random_forest, marker_score]
+  seed: 0
+
+interpret:
+  top_n_genes: 25
+  min_cells_per_state: 10
+  enabled: true

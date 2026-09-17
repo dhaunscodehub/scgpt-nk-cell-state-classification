@@ -1,0 +1,157 @@
+{
+  "seed": 0,
+  "confound_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_checks": 8,
+  "n_passed": 8,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "negative control: no state signal, donor-grouped split",
+      "expectation": "balanced accuracy within 0.05 of chance",
+      "passed": true,
+      "excess_over_chance": -0.0029549463840014556,
+      "state_effect": 0.0,
+      "donor_confound": false,
+      "split_kind": "donor",
+      "balanced_accuracy": 0.24704505361599854,
+      "macro_f1": 0.2437188764054305,
+      "accuracy": 0.24333333333333335,
+      "chance": 0.25,
+      "n_train": 750,
+      "n_test": 300,
+      "n_classes": 4
+    },
+    {
+      "name": "positive control: strong state signal, donor-grouped split",
+      "expectation": "balanced accuracy >= 0.85",
+      "passed": true,
+      "excess_over_chance": 0.75,
+      "state_effect": 0.8,
+      "split_kind": "donor",
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "accuracy": 1.0,
+      "chance": 0.25,
+      "n_train": 750,
+      "n_test": 300,
+      "n_classes": 4
+    },
+    {
+      "name": "donor confound, cell-random split: scores above chance on no signal",
+      "expectation": "mean balanced accuracy far above chance despite state_effect = 0, because donor identity is shared across folds",
+      "passed": true,
+      "shared_donors_train_test": 12,
+      "state_effect": 0.0,
+      "donor_confound": true,
+      "split_kind": "cell_random",
+      "balanced_accuracy": 0.6547739449565287,
+      "balanced_accuracy_sd": 0.03251472900314692,
+      "balanced_accuracy_min": 0.6232840196202265,
+      "balanced_accuracy_max": 0.6953349151250201,
+      "chance": 0.25,
+      "excess_over_chance": 0.40477394495652874,
+      "n_replicates": 5,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "per_seed_balanced_accuracy": [
+        0.6925,
+        0.6234,
+        0.6953,
+        0.6233,
+        0.6393
+      ]
+    },
+    {
+      "name": "donor confound, donor-held-out split: falls back to chance",
+      "expectation": "mean balanced accuracy within 0.05 of chance on the same data, because donor identity no longer transfers between folds",
+      "passed": true,
+      "shared_donors_train_test": 0,
+      "state_effect": 0.0,
+      "donor_confound": true,
+      "split_kind": "donor",
+      "balanced_accuracy": 0.2519308115677633,
+      "balanced_accuracy_sd": 0.0198767359298225,
+      "balanced_accuracy_min": 0.2193456245748724,
+      "balanced_accuracy_max": 0.2801867013823535,
+      "chance": 0.25,
+      "excess_over_chance": 0.001930811567763313,
+      "n_replicates": 5,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "per_seed_balanced_accuracy": [
+        0.2508,
+        0.2617,
+        0.2193,
+        0.2476,
+        0.2802
+      ]
+    },
+    {
+      "name": "cell-random splitting overstates accuracy by a large margin",
+      "expectation": "cell-random minus donor-held-out balanced accuracy >= 0.25",
+      "passed": true,
+      "optimism_balanced_accuracy": 0.40284313338876543,
+      "cell_random_balanced_accuracy": 0.6547739449565287,
+      "donor_held_out_balanced_accuracy": 0.2519308115677633,
+      "chance": 0.25,
+      "n_replicates": 5
+    },
+    {
+      "name": "single-donor donor-grouped split is refused",
+      "expectation": "raises rather than degenerating to a cell-level split",
+      "passed": true,
+      "error_type": "SplitError",
+      "message": "a donor-grouped split needs at least 3 donors, found 1 (['only_donor']). A single- or two-donor dataset cannot support one: splitting its cells at random would measure donor recognition, which is exactly what this split exists to prevent. Use synthetic multi-donor data to validate the pipeline, and report a single-donor result as single-donor."
+    },
+    {
+      "name": "marker pseudo-labels recover the generating state (code check)",
+      "expectation": "ARI >= 0.9 on confidently-labelled cells",
+      "passed": true,
+      "adjusted_rand_index": 1.0,
+      "macro_f1": 1.0,
+      "n_confident": 900,
+      "n_cells": 900,
+      "fraction_ambiguous": 0.0,
+      "caveat": "the synthetic signal is planted on the marker-panel genes, so recovery is expected by construction; this validates the scoring implementation and says nothing about real NK states"
+    },
+    {
+      "name": "leakage guard rejects a corrupted donor split",
+      "expectation": "raises LeakageError when a donor spans train and test",
+      "passed": true,
+      "message": "donor_holdout: cell 0 is in the test fold but its donor np.str_('D0') is not in the test donor list"
+    }
+  ],
+  "confound_optimism_balanced_accuracy": 0.40284313338876543,
+  "interpretation": "On a cohort with no biological state signal, averaged over 5 seeds, a cell-random split reaches 0.655 balanced accuracy while a donor-held-out split reaches 0.252 against a chance level of 0.250. The difference is donor identity, not biology.",
+  "provenance": {
+    "timestamp_utc": "2026-09-17T09:33:29+00:00",
+    "python": "3.14.6",
+    "platform": "macOS-26.3-arm64-arm-64bit-Mach-O",
+    "git_commit": null,
+    "packages": {
+      "numpy": "2.5.1",
+      "scipy": "1.18.0",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0",
+      "scanpy": "1.12.4",
+      "anndata": "0.13.3.post0",
+      "scgpt": null
+    }
+  }
+}

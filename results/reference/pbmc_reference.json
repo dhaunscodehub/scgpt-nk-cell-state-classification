@@ -1,0 +1,5574 @@
+{
+  "name": "pbmc_reference",
+  "dataset": {
+    "n_cells": 2638,
+    "n_genes": 2022,
+    "n_donors": 1,
+    "class_balance": {
+      "train_class_counts": {
+        "B cells": 237,
+        "CD14+ Monocytes": 350,
+        "CD4 T cells": 786,
+        "CD8 T cells": 226,
+        "Dendritic cells": 20,
+        "FCGR3A+ Monocytes": 108,
+        "Megakaryocytes": 11,
+        "NK cells": 108
+      },
+      "train_n_classes": 8,
+      "val_class_counts": {
+        "B cells": 35,
+        "CD14+ Monocytes": 44,
+        "CD4 T cells": 132,
+        "CD8 T cells": 29,
+        "Dendritic cells": 4,
+        "FCGR3A+ Monocytes": 12,
+        "NK cells": 8
+      },
+      "val_n_classes": 7,
+      "test_class_counts": {
+        "B cells": 70,
+        "CD14+ Monocytes": 86,
+        "CD4 T cells": 226,
+        "CD8 T cells": 61,
+        "Dendritic cells": 13,
+        "FCGR3A+ Monocytes": 30,
+        "Megakaryocytes": 4,
+        "NK cells": 38
+      },
+      "test_n_classes": 8,
+      "classes_in_test_but_not_train": [],
+      "classes_in_train_but_not_test": []
+    }
+  },
+  "split_kind": "cell_random",
+  "label_type": "curated_annotation",
+  "qc": {
+    "n_cells_before": 2638,
+    "n_cells_after": 2638,
+    "fraction_retained": 1.0,
+    "n_genes_before": 13714,
+    "n_genes_after": 13656,
+    "removed_low_genes": 0,
+    "removed_low_counts": 0,
+    "removed_high_mito": 0,
+    "median_genes_per_cell": 819.0,
+    "median_counts_per_cell": 812.0523681640625,
+    "median_mito_fraction": 0.016634244471788406,
+    "thresholds": {
+      "min_genes": 0,
+      "min_counts": 0,
+      "max_mito_fraction": 1.0,
+      "min_cells_per_gene": 3
+    }
+  },
+  "hvg_selection": {
+    "strategy": "pooled (only one donor present)",
+    "donor_key": "donor_id",
+    "n_donors": 1,
+    "n_forced_marker_genes": 22,
+    "n_genes": 2022
+  },
+  "evaluations": [
+    {
+      "model": "logistic",
+      "split_kind": "cell_random",
+      "label_type": "curated_annotation",
+      "cell_level": {
+        "level": "cell",
+        "n_cells": 528,
+        "accuracy": 0.9696969696969697,
+        "balanced_accuracy": 0.9634880446584433,
+        "macro_f1": 0.9663427433558058,
+        "weighted_f1": 0.9694369017144985,
+        "cohen_kappa": 0.9595984715520252,
+        "macro_auroc": 0.9968255107974644,
+        "chance_accuracy": 0.42803030303030304,
+        "labels": [
+          "B cells",
+          "CD14+ Monocytes",
+          "CD4 T cells",
+          "CD8 T cells",
+          "Dendritic cells",
+          "FCGR3A+ Monocytes",
+          "Megakaryocytes",
+          "NK cells"
+        ],
+        "confusion": [
+          [
+            70,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            85,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            221,
+            3,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            5,
+            54,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            28,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            38
+          ]
+        ],
+        "per_class": [
+          {
+            "label": "B cells",
+            "precision": 0.9859154929577465,
+            "recall": 1.0,
+            "f1": 0.9929078014184397,
+            "support": 70
+          },
+          {
+            "label": "CD14+ Monocytes",
+            "precision": 0.9659090909090909,
+            "recall": 0.9883720930232558,
+            "f1": 0.9770114942528736,
+            "support": 86
+          },
+          {
+            "label": "CD4 T cells",
+            "precision": 0.9778761061946902,
+            "recall": 0.9778761061946902,
+            "f1": 0.9778761061946902,
+            "support": 226
+          },
+          {
+            "label": "CD8 T cells",
+            "precision": 0.9473684210526315,
+            "recall": 0.8852459016393442,
+            "f1": 0.9152542372881356,
+            "support": 61
+          },
+          {
+            "label": "Dendritic cells",
+            "precision": 1.0,
+            "recall": 0.9230769230769231,
+            "f1": 0.96,
+            "support": 13
+          },
+          {
+            "label": "FCGR3A+ Monocytes",
+            "precision": 0.9333333333333333,
+            "recall": 0.9333333333333333,
+            "f1": 0.9333333333333333,
+            "support": 30
+          },
+          {
+            "label": "Megakaryocytes",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 4
+          },
+          {
+            "label": "NK cells",
+            "precision": 0.95,
+            "recall": 1.0,
+            "f1": 0.9743589743589743,
+            "support": 38
+          }
+        ]
+      },
+      "donor_level": null,
+      "cell_minus_donor_macro_f1": null,
+      "caveats": [
+        "donor-level metrics need at least 2 held-out donors, found 1 (['pbmc3k_donor1']); only cell-level metrics are reported and they cannot speak to generalisation across donors",
+        "cell-random split: cells from a donor appear in both train and test, so these numbers are optimistic by construction and are reported only for comparison against the donor-grouped split"
+      ]
+    },
+    {
+      "model": "random_forest",
+      "split_kind": "cell_random",
+      "label_type": "curated_annotation",
+      "cell_level": {
+        "level": "cell",
+        "n_cells": 528,
+        "accuracy": 0.9602272727272727,
+        "balanced_accuracy": 0.9444588434197458,
+        "macro_f1": 0.9551067977809624,
+        "weighted_f1": 0.959484220967378,
+        "cohen_kappa": 0.9468339135188009,
+        "macro_auroc": 0.9980357008765344,
+        "chance_accuracy": 0.42803030303030304,
+        "labels": [
+          "B cells",
+          "CD14+ Monocytes",
+          "CD4 T cells",
+          "CD8 T cells",
+          "Dendritic cells",
+          "FCGR3A+ Monocytes",
+          "Megakaryocytes",
+          "NK cells"
+        ],
+        "confusion": [
+          [
+            70,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            86,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            220,
+            4,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            8,
+            51,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            27,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            38
+          ]
+        ],
+        "per_class": [
+          {
+            "label": "B cells",
+            "precision": 0.9722222222222222,
+            "recall": 1.0,
+            "f1": 0.9859154929577465,
+            "support": 70
+          },
+          {
+            "label": "CD14+ Monocytes",
+            "precision": 0.945054945054945,
+            "recall": 1.0,
+            "f1": 0.9717514124293786,
+            "support": 86
+          },
+          {
+            "label": "CD4 T cells",
+            "precision": 0.9649122807017544,
+            "recall": 0.9734513274336283,
+            "f1": 0.9691629955947136,
+            "support": 226
+          },
+          {
+            "label": "CD8 T cells",
+            "precision": 0.9272727272727272,
+            "recall": 0.8360655737704918,
+            "f1": 0.8793103448275862,
+            "support": 61
+          },
+          {
+            "label": "Dendritic cells",
+            "precision": 1.0,
+            "recall": 0.8461538461538461,
+            "f1": 0.9166666666666666,
+            "support": 13
+          },
+          {
+            "label": "FCGR3A+ Monocytes",
+            "precision": 0.9642857142857143,
+            "recall": 0.9,
+            "f1": 0.9310344827586207,
+            "support": 30
+          },
+          {
+            "label": "Megakaryocytes",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 4
+          },
+          {
+            "label": "NK cells",
+            "precision": 0.9743589743589743,
+            "recall": 1.0,
+            "f1": 0.987012987012987,
+            "support": 38
+          }
+        ]
+      },
+      "donor_level": null,
+      "cell_minus_donor_macro_f1": null,
+      "caveats": [
+        "donor-level metrics need at least 2 held-out donors, found 1 (['pbmc3k_donor1']); only cell-level metrics are reported and they cannot speak to generalisation across donors",
+        "cell-random split: cells from a donor appear in both train and test, so these numbers are optimistic by construction and are reported only for comparison against the donor-grouped split"
+      ]
+    },
+    {
+      "model": "mlp",
+      "split_kind": "cell_random",
+      "label_type": "curated_annotation",
+      "cell_level": {
+        "level": "cell",
+        "n_cells": 528,
+        "accuracy": 0.9412878787878788,
+        "balanced_accuracy": 0.9039884453039102,
+        "macro_f1": 0.924966355791992,
+        "weighted_f1": 0.9384190838930384,
+        "cohen_kappa": 0.9208476190936743,
+        "macro_auroc": 0.9946620351930724,
+        "chance_accuracy": 0.42803030303030304,
+        "labels": [
+          "B cells",
+          "CD14+ Monocytes",
+          "CD4 T cells",
+          "CD8 T cells",
+          "Dendritic cells",
+          "FCGR3A+ Monocytes",
+          "Megakaryocytes",
+          "NK cells"
+        ],
+        "confusion": [
+          [
+            69,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            86,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            222,
+            3,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            15,
+            43,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            1,
+            3,
+            0,
+            0,
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0,
+            26,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            38
+          ]
+        ],
+        "per_class": [
+          {
+            "label": "B cells",
+            "precision": 0.9857142857142858,
+            "recall": 0.9857142857142858,
+            "f1": 0.9857142857142858,
+            "support": 70
+          },
+          {
+            "label": "CD14+ Monocytes",
+            "precision": 0.9247311827956989,
+            "recall": 1.0,
+            "f1": 0.9608938547486033,
+            "support": 86
+          },
+          {
+            "label": "CD4 T cells",
+            "precision": 0.9327731092436975,
+            "recall": 0.9823008849557522,
+            "f1": 0.9568965517241379,
+            "support": 226
+          },
+          {
+            "label": "CD8 T cells",
+            "precision": 0.9347826086956522,
+            "recall": 0.7049180327868853,
+            "f1": 0.8037383177570093,
+            "support": 61
+          },
+          {
+            "label": "Dendritic cells",
+            "precision": 1.0,
+            "recall": 0.6923076923076923,
+            "f1": 0.8181818181818182,
+            "support": 13
+          },
+          {
+            "label": "FCGR3A+ Monocytes",
+            "precision": 0.9629629629629629,
+            "recall": 0.8666666666666667,
+            "f1": 0.9122807017543859,
+            "support": 30
+          },
+          {
+            "label": "Megakaryocytes",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 4
+          },
+          {
+            "label": "NK cells",
+            "precision": 0.926829268292683,
+            "recall": 1.0,
+            "f1": 0.9620253164556962,
+            "support": 38
+          }
+        ]
+      },
+      "donor_level": null,
+      "cell_minus_donor_macro_f1": null,
+      "caveats": [
+        "donor-level metrics need at least 2 held-out donors, found 1 (['pbmc3k_donor1']); only cell-level metrics are reported and they cannot speak to generalisation across donors",
+        "cell-random split: cells from a donor appear in both train and test, so these numbers are optimistic by construction and are reported only for comparison against the donor-grouped split"
+      ]
+    },
+    {
+      "model": "marker_score",
+      "split_kind": "cell_random",
+      "label_type": "curated_annotation",
+      "cell_level": {
+        "level": "cell",
+        "n_cells": 528,
+        "accuracy": 0.7102272727272727,
+        "balanced_accuracy": 0.6949989709816835,
+        "macro_f1": 0.47849348101931116,
+        "weighted_f1": 0.6897126073428356,
+        "cohen_kappa": 0.628739763044937,
+        "macro_auroc": 0.911230663666007,
+        "chance_accuracy": 0.42803030303030304,
+        "labels": [
+          "B cells",
+          "CD14+ Monocytes",
+          "CD4 T cells",
+          "CD8 T cells",
+          "Dendritic cells",
+          "FCGR3A+ Monocytes",
+          "Megakaryocytes",
+          "NK cells"
+        ],
+        "confusion": [
+          [
+            70,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            63,
+            0,
+            0,
+            22,
+            0,
+            1,
+            0
+          ],
+          [
+            6,
+            1,
+            187,
+            0,
+            2,
+            0,
+            30,
+            0
+          ],
+          [
+            1,
+            0,
+            17,
+            0,
+            0,
+            0,
+            1,
+            42
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            13,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            27,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            38
+          ]
+        ],
+        "per_class": [
+          {
+            "label": "B cells",
+            "precision": 0.9090909090909091,
+            "recall": 1.0,
+            "f1": 0.9523809523809523,
+            "support": 70
+          },
+          {
+            "label": "CD14+ Monocytes",
+            "precision": 0.9545454545454546,
+            "recall": 0.7325581395348837,
+            "f1": 0.8289473684210527,
+            "support": 86
+          },
+          {
+            "label": "CD4 T cells",
+            "precision": 0.9166666666666666,
+            "recall": 0.827433628318584,
+            "f1": 0.8697674418604651,
+            "support": 226
+          },
+          {
+            "label": "CD8 T cells",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 61
+          },
+          {
+            "label": "Dendritic cells",
+            "precision": 0.203125,
+            "recall": 1.0,
+            "f1": 0.33766233766233766,
+            "support": 13
+          },
+          {
+            "label": "FCGR3A+ Monocytes",
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 30
+          },
+          {
+            "label": "Megakaryocytes",
+            "precision": 0.10810810810810811,
+            "recall": 1.0,
+            "f1": 0.1951219512195122,
+            "support": 4
+          },
+          {
+            "label": "NK cells",
+            "precision": 0.475,
+            "recall": 1.0,
+            "f1": 0.6440677966101694,
+            "support": 38
+          }
+        ]
+      },
+      "donor_level": null,
+      "cell_minus_donor_macro_f1": null,
+      "caveats": [
+        "donor-level metrics need at least 2 held-out donors, found 1 (['pbmc3k_donor1']); only cell-level metrics are reported and they cannot speak to generalisation across donors",
+        "cell-random split: cells from a donor appear in both train and test, so these numbers are optimistic by construction and are reported only for comparison against the donor-grouped split"
+      ]
+    }
+  ],
+  "comparison": {
+    "ranking": [
+      {
+        "model": "logistic",
+        "split_kind": "cell_random",
+        "cell_macro_f1": 0.9663427433558058,
+        "cell_balanced_accuracy": 0.9634880446584433,
+        "donor_mean_macro_f1": null,
+        "cell_minus_donor": null
+      },
+      {
+        "model": "random_forest",
+        "split_kind": "cell_random",
+        "cell_macro_f1": 0.9551067977809624,
+        "cell_balanced_accuracy": 0.9444588434197458,
+        "donor_mean_macro_f1": null,
+        "cell_minus_donor": null
+      },
+      {
+        "model": "mlp",
+        "split_kind": "cell_random",
+        "cell_macro_f1": 0.924966355791992,
+        "cell_balanced_accuracy": 0.9039884453039102,
+        "donor_mean_macro_f1": null,
+        "cell_minus_donor": null
+      },
+      {
+        "model": "marker_score",
+        "split_kind": "cell_random",
+        "cell_macro_f1": 0.47849348101931116,
+        "cell_balanced_accuracy": 0.6949989709816835,
+        "donor_mean_macro_f1": null,
+        "cell_minus_donor": null
+      }
+    ],
+    "best_model": "logistic",
+    "marker_score_floor_macro_f1": 0.47849348101931116,
+    "beats_marker_score_floor": {
+      "logistic": true,
+      "random_forest": true,
+      "mlp": true
+    },
+    "note": "marker_score does no fitting; a learned model that does not exceed it has not earned its complexity"
+  },
+  "interpretation": {
+    "states_tested": [
+      "B cells",
+      "CD14+ Monocytes",
+      "CD4 T cells",
+      "CD8 T cells",
+      "Dendritic cells",
+      "FCGR3A+ Monocytes",
+      "Megakaryocytes",
+      "NK cells"
+    ],
+    "states_skipped": {},
+    "classes_without_marker_panel": [],
+    "top_n": 50,
+    "differential_expression": {
+      "B cells": [
+        {
+          "gene": "CD79A",
+          "log2_fold_change": 6.658023090172058,
+          "statistic": 366787.0,
+          "p_value": 2.046527575972086e-289,
+          "q_value": 4.138078758615558e-286,
+          "mean_in_group": 1.4395279059430215,
+          "mean_out_group": 0.03030196949145007,
+          "fraction_expressing_in": 0.9324894514767933,
+          "is_technical": false
+        },
+        {
+          "gene": "MS4A1",
+          "log2_fold_change": 5.25471365755825,
+          "statistic": 353108.5,
+          "p_value": 2.4170068078884663e-241,
+          "q_value": 2.4435938827752395e-238,
+          "mean_in_group": 0.9939812457008201,
+          "mean_out_group": 0.039348638746736955,
+          "fraction_expressing_in": 0.8776371308016878,
+          "is_technical": false
+        },
+        {
+          "gene": "TCL1A",
+          "log2_fold_change": 6.140362907994557,
+          "statistic": 305096.0,
+          "p_value": 6.216567808281577e-189,
+          "q_value": 4.189966702781783e-186,
+          "mean_in_group": 0.7702668784539911,
+          "mean_out_group": 0.01466611307403773,
+          "fraction_expressing_in": 0.6118143459915611,
+          "is_technical": false
+        },
+        {
+          "gene": "LINC00926",
+          "log2_fold_change": 6.874713526040356,
+          "statistic": 295635.5,
+          "p_value": 1.6185669301828573e-188,
+          "q_value": 8.181855832074344e-186,
+          "mean_in_group": 0.5442195693148842,
+          "mean_out_group": 0.0060311128368579206,
+          "fraction_expressing_in": 0.5569620253164557,
+          "is_technical": false
+        },
+        {
+          "gene": "CD79B",
+          "log2_fold_change": 3.992079163556667,
+          "statistic": 356134.0,
+          "p_value": 5.706571503209234e-179,
+          "q_value": 2.3077375158978143e-176,
+          "mean_in_group": 1.3190241091362032,
+          "mean_out_group": 0.1255392539271514,
+          "fraction_expressing_in": 0.919831223628692,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQA1",
+          "log2_fold_change": 3.0704866720717856,
+          "statistic": 347254.5,
+          "p_value": 7.883331112046534e-179,
+          "q_value": 2.6566825847596822e-176,
+          "mean_in_group": 1.2293021824792467,
+          "mean_out_group": 0.12760121078503064,
+          "fraction_expressing_in": 0.8987341772151899,
+          "is_technical": false
+        },
+        {
+          "gene": "VPREB3",
+          "log2_fold_change": 7.10661297050959,
+          "statistic": 286261.5,
+          "p_value": 3.3577327922870616e-174,
+          "q_value": 9.699051008577769e-172,
+          "mean_in_group": 0.4699496518710495,
+          "mean_out_group": 0.004307937740612801,
+          "fraction_expressing_in": 0.5063291139240507,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQB1",
+          "log2_fold_change": 3.20935897326579,
+          "statistic": 338619.5,
+          "p_value": 2.6471584753689527e-147,
+          "q_value": 6.690693046495028e-145,
+          "mean_in_group": 1.1540414094924927,
+          "mean_out_group": 0.1368771681065438,
+          "fraction_expressing_in": 0.8565400843881856,
+          "is_technical": false
+        },
+        {
+          "gene": "FCER2",
+          "log2_fold_change": 6.532592231782105,
+          "statistic": 266047.5,
+          "p_value": 9.781584078997696e-133,
+          "q_value": 2.197595889748149e-130,
+          "mean_in_group": 0.3601270109289306,
+          "mean_out_group": 0.0045599359544335576,
+          "fraction_expressing_in": 0.4008438818565401,
+          "is_technical": false
+        },
+        {
+          "gene": "CD74",
+          "log2_fold_change": 2.2699376013826504,
+          "statistic": 363025.5,
+          "p_value": 6.742796145945195e-114,
+          "q_value": 1.3633933807101182e-111,
+          "mean_in_group": 3.2560413084955657,
+          "mean_out_group": 1.2565083526690752,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRA",
+          "log2_fold_change": 2.12192125886378,
+          "statistic": 351230.0,
+          "p_value": 5.173973895658161e-107,
+          "q_value": 9.510704742746184e-105,
+          "mean_in_group": 2.833882093932558,
+          "mean_out_group": 0.8075758146898876,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "BANK1",
+          "log2_fold_change": 4.323505788946938,
+          "statistic": 270929.5,
+          "p_value": 1.3334975359105996e-99,
+          "q_value": 2.2469433480093605e-97,
+          "mean_in_group": 0.4041683663798787,
+          "mean_out_group": 0.025238037109375,
+          "fraction_expressing_in": 0.45147679324894513,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQA2",
+          "log2_fold_change": 3.050595042450055,
+          "statistic": 281175.5,
+          "p_value": 7.624569492994671e-97,
+          "q_value": 1.1859138088334788e-94,
+          "mean_in_group": 0.5159134226006294,
+          "mean_out_group": 0.057354133791476025,
+          "fraction_expressing_in": 0.5316455696202531,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DPB1",
+          "log2_fold_change": 1.7036500375746428,
+          "statistic": 339510.0,
+          "p_value": 2.366250919108678e-94,
+          "q_value": 3.4175423988841046e-92,
+          "mean_in_group": 1.9622190909043646,
+          "mean_out_group": 0.6146808673018176,
+          "fraction_expressing_in": 0.9915611814345991,
+          "is_technical": false
+        },
+        {
+          "gene": "PDLIM1",
+          "log2_fold_change": 3.8075994378275753,
+          "statistic": 255450.5,
+          "p_value": 2.6968978556844756e-85,
+          "q_value": 3.635418309462673e-83,
+          "mean_in_group": 0.2727685155747812,
+          "mean_out_group": 0.017987745603913474,
+          "fraction_expressing_in": 0.3628691983122363,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRB1",
+          "log2_fold_change": 1.3690237594145944,
+          "statistic": 325228.0,
+          "p_value": 2.9676950219438395e-81,
+          "q_value": 3.750424583981527e-79,
+          "mean_in_group": 1.7197224832285305,
+          "mean_out_group": 0.571460772108928,
+          "fraction_expressing_in": 0.9873417721518988,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DPA1",
+          "log2_fold_change": 1.344719894318132,
+          "statistic": 323705.5,
+          "p_value": 1.9901879888933405e-77,
+          "q_value": 2.3671530079660794e-75,
+          "mean_in_group": 1.696082341520092,
+          "mean_out_group": 0.5915935396629509,
+          "fraction_expressing_in": 0.9831223628691983,
+          "is_technical": false
+        },
+        {
+          "gene": "KIAA0125",
+          "log2_fold_change": 5.689204551006191,
+          "statistic": 234771.5,
+          "p_value": 9.547420855364555e-74,
+          "q_value": 1.0724936094192849e-71,
+          "mean_in_group": 0.19397462571220558,
+          "mean_out_group": 0.003950346620131754,
+          "fraction_expressing_in": 0.23628691983122363,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A4",
+          "log2_fold_change": -3.2492521136243577,
+          "statistic": 52489.0,
+          "p_value": 2.0107345029568975e-73,
+          "q_value": 2.1398448236730772e-71,
+          "mean_in_group": 0.3886164763808753,
+          "mean_out_group": 1.7636545615732633,
+          "fraction_expressing_in": 0.3881856540084388,
+          "is_technical": false
+        },
+        {
+          "gene": "CD37",
+          "log2_fold_change": 1.6133979486570134,
+          "statistic": 326098.5,
+          "p_value": 1.1369748902658755e-72,
+          "q_value": 1.1494816140588002e-70,
+          "mean_in_group": 1.7303754156651878,
+          "mean_out_group": 0.8276547635097989,
+          "fraction_expressing_in": 0.9620253164556962,
+          "is_technical": false
+        },
+        {
+          "gene": "SPIB",
+          "log2_fold_change": 5.189469986385605,
+          "statistic": 237266.5,
+          "p_value": 9.293230360568875e-71,
+          "q_value": 8.948053232890602e-69,
+          "mean_in_group": 0.21499671815316887,
+          "mean_out_group": 0.0067139048247399575,
+          "fraction_expressing_in": 0.25316455696202533,
+          "is_technical": false
+        },
+        {
+          "gene": "CD72",
+          "log2_fold_change": 4.884220665647,
+          "statistic": 239150.0,
+          "p_value": 1.4788271017886795e-69,
+          "q_value": 1.3591765453712317e-67,
+          "mean_in_group": 0.22129062057044435,
+          "mean_out_group": 0.008615875481225601,
+          "fraction_expressing_in": 0.26582278481012656,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRB5",
+          "log2_fold_change": 1.301391099543258,
+          "statistic": 302508.5,
+          "p_value": 5.2912727327234504e-65,
+          "q_value": 4.651718898072529e-63,
+          "mean_in_group": 1.0438986599193847,
+          "mean_out_group": 0.35004084224357157,
+          "fraction_expressing_in": 0.8565400843881856,
+          "is_technical": false
+        },
+        {
+          "gene": "TMSB4X",
+          "log2_fold_change": -1.0340132395564514,
+          "statistic": 60670.5,
+          "p_value": 1.364992107280314e-64,
+          "q_value": 1.1500058503836645e-62,
+          "mean_in_group": 3.021879187616115,
+          "mean_out_group": 3.784823066333275,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A6",
+          "log2_fold_change": -2.808419336352387,
+          "statistic": 65413.5,
+          "p_value": 1.8821153340138834e-61,
+          "q_value": 1.5222548821504288e-59,
+          "mean_in_group": 0.32894481033212525,
+          "mean_out_group": 1.341074302153531,
+          "fraction_expressing_in": 0.35443037974683544,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DMA",
+          "log2_fold_change": 1.8075401611958746,
+          "statistic": 288207.0,
+          "p_value": 1.4792614620668638e-59,
+          "q_value": 1.1504102601150763e-57,
+          "mean_in_group": 0.7490403234707153,
+          "mean_out_group": 0.21009772382514533,
+          "fraction_expressing_in": 0.70042194092827,
+          "is_technical": false
+        },
+        {
+          "gene": "IGLL5",
+          "log2_fold_change": 7.662058525452686,
+          "statistic": 230628.5,
+          "p_value": 5.521066527214941e-56,
+          "q_value": 4.134665377047633e-54,
+          "mean_in_group": 0.36271343150722324,
+          "mean_out_group": 0.007754287933103041,
+          "fraction_expressing_in": 0.21940928270042195,
+          "is_technical": false
+        },
+        {
+          "gene": "BLNK",
+          "log2_fold_change": 5.015592408585807,
+          "statistic": 228970.5,
+          "p_value": 9.83235466640057e-54,
+          "q_value": 7.100364691236412e-52,
+          "mean_in_group": 0.17669891003314955,
+          "mean_out_group": 0.007323494159041761,
+          "fraction_expressing_in": 0.2109704641350211,
+          "is_technical": false
+        },
+        {
+          "gene": "PPAPDC1B",
+          "log2_fold_change": 3.334747332449399,
+          "statistic": 245677.0,
+          "p_value": 2.9278414927074277e-52,
+          "q_value": 2.0414122407773859e-50,
+          "mean_in_group": 0.2706178954884976,
+          "mean_out_group": 0.030838356172171642,
+          "fraction_expressing_in": 0.3291139240506329,
+          "is_technical": false
+        },
+        {
+          "gene": "GIMAP7",
+          "log2_fold_change": -3.740447562650623,
+          "statistic": 86394.5,
+          "p_value": 1.022019640539473e-47,
+          "q_value": 6.8884123772360476e-46,
+          "mean_in_group": 0.06235963885794209,
+          "mean_out_group": 0.6197704347192019,
+          "fraction_expressing_in": 0.08438818565400844,
+          "is_technical": false
+        },
+        {
+          "gene": "ANXA1",
+          "log2_fold_change": -1.9797590923224606,
+          "statistic": 87356.0,
+          "p_value": 3.537273800807683e-45,
+          "q_value": 2.3072153629784306e-43,
+          "mean_in_group": 0.1381147541577303,
+          "mean_out_group": 0.7513319671783779,
+          "fraction_expressing_in": 0.15611814345991562,
+          "is_technical": false
+        },
+        {
+          "gene": "IRF8",
+          "log2_fold_change": 2.406270797185352,
+          "statistic": 247985.5,
+          "p_value": 7.7458007163702245e-44,
+          "q_value": 4.8943778276564355e-42,
+          "mean_in_group": 0.29738449949755447,
+          "mean_out_group": 0.053639652419342175,
+          "fraction_expressing_in": 0.3670886075949367,
+          "is_technical": false
+        },
+        {
+          "gene": "SMIM14",
+          "log2_fold_change": 3.0177781732435602,
+          "statistic": 243292.0,
+          "p_value": 9.126494001041295e-40,
+          "q_value": 5.592051778819848e-38,
+          "mean_in_group": 0.28512238902884696,
+          "mean_out_group": 0.047501330200821215,
+          "fraction_expressing_in": 0.33755274261603374,
+          "is_technical": false
+        },
+        {
+          "gene": "SRGN",
+          "log2_fold_change": -2.7112805946731577,
+          "statistic": 95769.5,
+          "p_value": 4.498641112907677e-38,
+          "q_value": 2.6753683324409774e-36,
+          "mean_in_group": 0.1896114449963791,
+          "mean_out_group": 0.8252421866447159,
+          "fraction_expressing_in": 0.2320675105485232,
+          "is_technical": false
+        },
+        {
+          "gene": "RP5-887A10.1",
+          "log2_fold_change": 7.120756230379661,
+          "statistic": 211354.5,
+          "p_value": 2.9051957959771875e-37,
+          "q_value": 1.6783731141331068e-35,
+          "mean_in_group": 0.09723580034473274,
+          "mean_out_group": 0.0008615875481225601,
+          "fraction_expressing_in": 0.10970464135021098,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A11",
+          "log2_fold_change": -3.3421596690919344,
+          "statistic": 99190.0,
+          "p_value": 5.027917127790467e-37,
+          "q_value": 2.824013453442312e-35,
+          "mean_in_group": 0.11527501228992446,
+          "mean_out_group": 0.7806707610989151,
+          "fraction_expressing_in": 0.13924050632911392,
+          "is_technical": false
+        },
+        {
+          "gene": "GAPDH",
+          "log2_fold_change": -1.254844690548936,
+          "statistic": 94899.5,
+          "p_value": 1.770909959846074e-36,
+          "q_value": 9.677783618402057e-35,
+          "mean_in_group": 0.6759300835524933,
+          "mean_out_group": 1.350343904930883,
+          "fraction_expressing_in": 0.6033755274261603,
+          "is_technical": false
+        },
+        {
+          "gene": "SWAP70",
+          "log2_fold_change": 2.9075952211817713,
+          "statistic": 227496.0,
+          "p_value": 3.491577594921139e-36,
+          "q_value": 1.8578868149817217e-34,
+          "mean_in_group": 0.16869418429925975,
+          "mean_out_group": 0.020237519772175753,
+          "fraction_expressing_in": 0.21940928270042195,
+          "is_technical": false
+        },
+        {
+          "gene": "ARHGAP24",
+          "log2_fold_change": 2.0131835018750897,
+          "statistic": 220378.0,
+          "p_value": 5.423405911664626e-36,
+          "q_value": 2.8118273726630446e-34,
+          "mean_in_group": 0.12383015950520833,
+          "mean_out_group": 0.011106449302640148,
+          "fraction_expressing_in": 0.16877637130801687,
+          "is_technical": false
+        },
+        {
+          "gene": "FCGR2B",
+          "log2_fold_change": 3.947629844390838,
+          "statistic": 217628.0,
+          "p_value": 4.707746798131655e-34,
+          "q_value": 2.3797660064555516e-32,
+          "mean_in_group": 0.12571322767040397,
+          "mean_out_group": 0.008437079920985078,
+          "fraction_expressing_in": 0.1518987341772152,
+          "is_technical": false
+        },
+        {
+          "gene": "GIMAP4",
+          "log2_fold_change": -3.348302946285619,
+          "statistic": 106695.5,
+          "p_value": 5.01869140084194e-34,
+          "q_value": 2.4750717103664395e-32,
+          "mean_in_group": 0.058990408096635395,
+          "mean_out_group": 0.46424003526096097,
+          "fraction_expressing_in": 0.08016877637130802,
+          "is_technical": false
+        },
+        {
+          "gene": "IGJ",
+          "log2_fold_change": 5.670095903605694,
+          "statistic": 217025.5,
+          "p_value": 8.450961675374064e-34,
+          "q_value": 4.0685344065729424e-32,
+          "mean_in_group": 0.17011132874066318,
+          "mean_out_group": 0.007892972568016455,
+          "fraction_expressing_in": 0.14767932489451477,
+          "is_technical": false
+        },
+        {
+          "gene": "ACTB",
+          "log2_fold_change": -1.1969789039827134,
+          "statistic": 98443.0,
+          "p_value": 2.0350727105530156e-33,
+          "q_value": 9.569574466833018e-32,
+          "mean_in_group": 2.005160042002231,
+          "mean_out_group": 2.655010964279222,
+          "fraction_expressing_in": 0.9873417721518988,
+          "is_technical": false
+        },
+        {
+          "gene": "VIM",
+          "log2_fold_change": -1.4309561662343155,
+          "statistic": 99905.5,
+          "p_value": 5.479434412384146e-33,
+          "q_value": 2.518049177691078e-31,
+          "mean_in_group": 0.6108786179546566,
+          "mean_out_group": 1.286588786773018,
+          "fraction_expressing_in": 0.569620253164557,
+          "is_technical": false
+        },
+        {
+          "gene": "SH3BGRL3",
+          "log2_fold_change": -1.2974905597572681,
+          "statistic": 99939.0,
+          "p_value": 6.303491433784227e-33,
+          "q_value": 2.832368817580379e-31,
+          "mean_in_group": 0.7171487989304941,
+          "mean_out_group": 1.337069087253734,
+          "fraction_expressing_in": 0.6835443037974683,
+          "is_technical": false
+        },
+        {
+          "gene": "MZB1",
+          "log2_fold_change": 3.7632053276350144,
+          "statistic": 213944.0,
+          "p_value": 5.615460807215272e-30,
+          "q_value": 2.4683612504759304e-28,
+          "mean_in_group": 0.10807037554712738,
+          "mean_out_group": 0.007671297596729343,
+          "fraction_expressing_in": 0.1308016877637131,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS1",
+          "log2_fold_change": -3.357810034774285,
+          "statistic": 111237.0,
+          "p_value": 5.78365388642762e-29,
+          "q_value": 2.488201735820563e-27,
+          "mean_in_group": 0.15930909195026768,
+          "mean_out_group": 0.9031102627682493,
+          "fraction_expressing_in": 0.16033755274261605,
+          "is_technical": false
+        },
+        {
+          "gene": "RP11-428G5.5",
+          "log2_fold_change": 6.0362231003664295,
+          "statistic": 207210.0,
+          "p_value": 3.598612165900535e-28,
+          "q_value": 1.5159153748856004e-26,
+          "mean_in_group": 0.07068909472051049,
+          "mean_out_group": 0.0012923813221838402,
+          "fraction_expressing_in": 0.08860759493670886,
+          "is_technical": false
+        },
+        {
+          "gene": "TNFRSF13B",
+          "log2_fold_change": 5.085133145185757,
+          "statistic": 209166.0,
+          "p_value": 2.0131511817078183e-27,
+          "q_value": 8.307329978394303e-26,
+          "mean_in_group": 0.08625398708295219,
+          "mean_out_group": 0.0030155564184289603,
+          "fraction_expressing_in": 0.10126582278481013,
+          "is_technical": false
+        },
+        {
+          "gene": "PPP1R14A",
+          "log2_fold_change": 4.647727990373998,
+          "statistic": 210301.0,
+          "p_value": 4.707374918015076e-26,
+          "q_value": 1.9036624168452967e-24,
+          "mean_in_group": 0.09894662366134709,
+          "mean_out_group": 0.0052427279423155945,
+          "fraction_expressing_in": 0.10970464135021098,
+          "is_technical": false
+        }
+      ],
+      "CD14+ Monocytes": [
+        {
+          "gene": "LGALS2",
+          "log2_fold_change": 5.0615293510744825,
+          "statistic": 492722.0,
+          "p_value": 4.9070440954265156e-276,
+          "q_value": 9.922043160952415e-273,
+          "mean_in_group": 1.400544181210654,
+          "mean_out_group": 0.05786004558922773,
+          "fraction_expressing_in": 0.9114285714285715,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A8",
+          "log2_fold_change": 6.202305771120204,
+          "statistic": 512218.0,
+          "p_value": 3.2365434711349232e-273,
+          "q_value": 3.2721454493174074e-270,
+          "mean_in_group": 2.4870867000307357,
+          "mean_out_group": 0.10497377988170176,
+          "fraction_expressing_in": 0.9714285714285714,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A9",
+          "log2_fold_change": 5.657092173235455,
+          "statistic": 515916.5,
+          "p_value": 3.570132840890203e-238,
+          "q_value": 2.406269534759997e-235,
+          "mean_in_group": 3.0435705777576993,
+          "mean_out_group": 0.22474636759031266,
+          "fraction_expressing_in": 0.9942857142857143,
+          "is_technical": false
+        },
+        {
+          "gene": "FCN1",
+          "log2_fold_change": 3.6130950897950354,
+          "statistic": 494368.0,
+          "p_value": 1.761582867045311e-222,
+          "q_value": 8.904801392914046e-220,
+          "mean_in_group": 1.7495113148008075,
+          "mean_out_group": 0.1790627370224917,
+          "fraction_expressing_in": 0.9657142857142857,
+          "is_technical": false
+        },
+        {
+          "gene": "CD14",
+          "log2_fold_change": 5.5157214937162955,
+          "statistic": 428026.5,
+          "p_value": 6.247042993433518e-196,
+          "q_value": 2.526304186544515e-193,
+          "mean_in_group": 0.7586898040771485,
+          "mean_out_group": 0.02359518074096843,
+          "fraction_expressing_in": 0.6542857142857142,
+          "is_technical": false
+        },
+        {
+          "gene": "MS4A6A",
+          "log2_fold_change": 4.4806451592588274,
+          "statistic": 431335.5,
+          "p_value": 9.405059680487423e-190,
+          "q_value": 3.1695051123242615e-187,
+          "mean_in_group": 0.7259908090318953,
+          "mean_out_group": 0.03645669338218668,
+          "fraction_expressing_in": 0.68,
+          "is_technical": false
+        },
+        {
+          "gene": "LYZ",
+          "log2_fold_change": 4.157596415711085,
+          "statistic": 510972.5,
+          "p_value": 6.65498575389673e-183,
+          "q_value": 1.9223401706255983e-180,
+          "mean_in_group": 3.5248383637837,
+          "mean_out_group": 0.5967704893592845,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "CST3",
+          "log2_fold_change": 2.655049669238952,
+          "statistic": 489842.0,
+          "p_value": 1.019371762679079e-179,
+          "q_value": 2.576462130171372e-177,
+          "mean_in_group": 2.532685081618173,
+          "mean_out_group": 0.40017403901260806,
+          "fraction_expressing_in": 0.9914285714285714,
+          "is_technical": false
+        },
+        {
+          "gene": "TYROBP",
+          "log2_fold_change": 2.867835588976752,
+          "statistic": 489289.5,
+          "p_value": 3.2577689073913226e-179,
+          "q_value": 7.319120811939171e-177,
+          "mean_in_group": 2.4132406306266785,
+          "mean_out_group": 0.4093019315265717,
+          "fraction_expressing_in": 0.9914285714285714,
+          "is_technical": false
+        },
+        {
+          "gene": "CFD",
+          "log2_fold_change": 2.6612805344321715,
+          "statistic": 446777.0,
+          "p_value": 4.284053650501828e-167,
+          "q_value": 8.662356481314695e-165,
+          "mean_in_group": 1.0027811942781721,
+          "mean_out_group": 0.13288675662986735,
+          "fraction_expressing_in": 0.8085714285714286,
+          "is_technical": false
+        },
+        {
+          "gene": "AIF1",
+          "log2_fold_change": 2.044620742157052,
+          "statistic": 472642.0,
+          "p_value": 6.435907759229291e-161,
+          "q_value": 1.183036862651057e-158,
+          "mean_in_group": 1.7840619850158692,
+          "mean_out_group": 0.34556341784841876,
+          "fraction_expressing_in": 0.9657142857142857,
+          "is_technical": false
+        },
+        {
+          "gene": "LST1",
+          "log2_fold_change": 1.729159611914994,
+          "statistic": 467110.5,
+          "p_value": 2.893920512735178e-156,
+          "q_value": 4.876256063958775e-154,
+          "mean_in_group": 1.6224104475975036,
+          "mean_out_group": 0.3345845970399877,
+          "fraction_expressing_in": 0.9542857142857143,
+          "is_technical": false
+        },
+        {
+          "gene": "TYMP",
+          "log2_fold_change": 2.61628659073568,
+          "statistic": 462596.5,
+          "p_value": 3.147167939997209e-152,
+          "q_value": 4.895056595903351e-150,
+          "mean_in_group": 1.3686826304027013,
+          "mean_out_group": 0.24965191094633093,
+          "fraction_expressing_in": 0.9085714285714286,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS1",
+          "log2_fold_change": 2.416806849223095,
+          "statistic": 474579.0,
+          "p_value": 8.317912362390599e-144,
+          "q_value": 1.201344199768128e-141,
+          "mean_in_group": 2.1050142352921624,
+          "mean_out_group": 0.5040813403971055,
+          "fraction_expressing_in": 0.9771428571428571,
+          "is_technical": false
+        },
+        {
+          "gene": "FTL",
+          "log2_fold_change": 2.2431988190354137,
+          "statistic": 489585.0,
+          "p_value": 1.511998702774994e-142,
+          "q_value": 2.038174251340692e-140,
+          "mean_in_group": 4.282624041693551,
+          "mean_out_group": 2.0544863367144437,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "GPX1",
+          "log2_fold_change": 2.5657240176380847,
+          "statistic": 465791.5,
+          "p_value": 1.7530413273849467e-142,
+          "q_value": 2.2154059774827265e-140,
+          "mean_in_group": 1.3919890509332928,
+          "mean_out_group": 0.29347421531689993,
+          "fraction_expressing_in": 0.9171428571428571,
+          "is_technical": false
+        },
+        {
+          "gene": "GSTP1",
+          "log2_fold_change": 2.6999077428709017,
+          "statistic": 466494.5,
+          "p_value": 2.1422954378600854e-137,
+          "q_value": 2.548071397266525e-135,
+          "mean_in_group": 1.4244779992103576,
+          "mean_out_group": 0.328177291282358,
+          "fraction_expressing_in": 0.9314285714285714,
+          "is_technical": false
+        },
+        {
+          "gene": "MALAT1",
+          "log2_fold_change": -1.4912169588788606,
+          "statistic": 38672.0,
+          "p_value": 2.2165987275177207e-136,
+          "q_value": 2.489979237244906e-134,
+          "mean_in_group": 3.0330406045913696,
+          "mean_out_group": 4.118015054952014,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "FTH1",
+          "log2_fold_change": 1.9159470552695614,
+          "statistic": 483274.0,
+          "p_value": 6.666998687159443e-135,
+          "q_value": 7.095090181808628e-133,
+          "mean_in_group": 3.8340326925686425,
+          "mean_out_group": 2.0325905863135896,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "FCER1G",
+          "log2_fold_change": 1.501595601732756,
+          "statistic": 450478.0,
+          "p_value": 3.22645239898273e-132,
+          "q_value": 3.26194337537154e-130,
+          "mean_in_group": 1.5020488139561246,
+          "mean_out_group": 0.3658879271803055,
+          "fraction_expressing_in": 0.9314285714285714,
+          "is_technical": false
+        },
+        {
+          "gene": "CDA",
+          "log2_fold_change": 3.538984669037436,
+          "statistic": 395750.0,
+          "p_value": 2.7398935299632846e-127,
+          "q_value": 2.63812605599322e-125,
+          "mean_in_group": 0.5344880468504769,
+          "mean_out_group": 0.050765385681932625,
+          "fraction_expressing_in": 0.5657142857142857,
+          "is_technical": false
+        },
+        {
+          "gene": "CD68",
+          "log2_fold_change": 2.4292535596123166,
+          "statistic": 418044.0,
+          "p_value": 1.9717099678207697e-124,
+          "q_value": 1.8121807067879984e-122,
+          "mean_in_group": 0.7997697227341788,
+          "mean_out_group": 0.13480544432918018,
+          "fraction_expressing_in": 0.7142857142857143,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A6",
+          "log2_fold_change": 1.9237785738111994,
+          "statistic": 471469.0,
+          "p_value": 1.950506107503261e-123,
+          "q_value": 1.7147492823354756e-121,
+          "mean_in_group": 2.304403627259391,
+          "mean_out_group": 0.9553524082038491,
+          "fraction_expressing_in": 0.9942857142857143,
+          "is_technical": false
+        },
+        {
+          "gene": "CTSS",
+          "log2_fold_change": 2.0502460463680148,
+          "statistic": 460277.0,
+          "p_value": 1.7606155164461943e-122,
+          "q_value": 1.4833185726059187e-120,
+          "mean_in_group": 1.6646888984952655,
+          "mean_out_group": 0.4690884403525827,
+          "fraction_expressing_in": 0.9457142857142857,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS3",
+          "log2_fold_change": 2.7616264198254132,
+          "statistic": 417723.0,
+          "p_value": 3.619959941414351e-117,
+          "q_value": 2.927823600615927e-115,
+          "mean_in_group": 0.8436204494748797,
+          "mean_out_group": 0.13718539572017077,
+          "fraction_expressing_in": 0.7057142857142857,
+          "is_technical": false
+        },
+        {
+          "gene": "ASGR1",
+          "log2_fold_change": 5.134363735975387,
+          "statistic": 362264.0,
+          "p_value": 7.026008834115886e-116,
+          "q_value": 5.464073024070124e-114,
+          "mean_in_group": 0.32797302518572125,
+          "mean_out_group": 0.010464373756857479,
+          "fraction_expressing_in": 0.39714285714285713,
+          "is_technical": false
+        },
+        {
+          "gene": "NPC2",
+          "log2_fold_change": 2.1752167980357067,
+          "statistic": 442630.5,
+          "p_value": 4.4228034206961135e-112,
+          "q_value": 3.312188339499089e-110,
+          "mean_in_group": 1.2019864133426121,
+          "mean_out_group": 0.3144440189561742,
+          "fraction_expressing_in": 0.88,
+          "is_technical": false
+        },
+        {
+          "gene": "NCF2",
+          "log2_fold_change": 3.276042338679046,
+          "statistic": 397247.0,
+          "p_value": 3.37069296061752e-111,
+          "q_value": 2.434121845131652e-109,
+          "mean_in_group": 0.5814458874293736,
+          "mean_out_group": 0.07559385792138104,
+          "fraction_expressing_in": 0.5971428571428572,
+          "is_technical": false
+        },
+        {
+          "gene": "SAT1",
+          "log2_fold_change": 1.7469864703857905,
+          "statistic": 453656.0,
+          "p_value": 4.9427180219363057e-110,
+          "q_value": 3.446267531156969e-108,
+          "mean_in_group": 1.7646796257155282,
+          "mean_out_group": 0.5977901860991901,
+          "fraction_expressing_in": 0.9628571428571429,
+          "is_technical": false
+        },
+        {
+          "gene": "CSF3R",
+          "log2_fold_change": 4.002573920904026,
+          "statistic": 374562.5,
+          "p_value": 2.633934532660719e-109,
+          "q_value": 1.7752718750133246e-107,
+          "mean_in_group": 0.4175033354759216,
+          "mean_out_group": 0.029889551394763476,
+          "fraction_expressing_in": 0.4657142857142857,
+          "is_technical": false
+        },
+        {
+          "gene": "SERPINA1",
+          "log2_fold_change": 2.0257646499231843,
+          "statistic": 410374.5,
+          "p_value": 4.243779828920628e-108,
+          "q_value": 2.768039617444358e-106,
+          "mean_in_group": 0.7858128745215279,
+          "mean_out_group": 0.15957848185842688,
+          "fraction_expressing_in": 0.7,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A11",
+          "log2_fold_change": 1.8000345780708387,
+          "statistic": 447890.5,
+          "p_value": 6.117556939269831e-108,
+          "q_value": 3.8655312910011244e-106,
+          "mean_in_group": 1.5524290125710623,
+          "mean_out_group": 0.49469871532152043,
+          "fraction_expressing_in": 0.9428571428571428,
+          "is_technical": false
+        },
+        {
+          "gene": "RPS27A",
+          "log2_fold_change": -1.6482338589241086,
+          "statistic": 66011.0,
+          "p_value": 1.2129091963433565e-105,
+          "q_value": 7.431825439412929e-104,
+          "mean_in_group": 1.3733914497920445,
+          "mean_out_group": 2.482122649881929,
+          "fraction_expressing_in": 0.8914285714285715,
+          "is_technical": true
+        },
+        {
+          "gene": "S100A4",
+          "log2_fold_change": 1.460348211518023,
+          "statistic": 455897.0,
+          "p_value": 1.1144927572138415e-104,
+          "q_value": 6.627953985548199e-103,
+          "mean_in_group": 2.6699301331383842,
+          "mean_out_group": 1.3337879330716669,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "FCGRT",
+          "log2_fold_change": 2.8027224451164527,
+          "statistic": 406940.5,
+          "p_value": 1.8932076603301508e-103,
+          "q_value": 1.0937331111964472e-101,
+          "mean_in_group": 0.6779475787707737,
+          "mean_out_group": 0.11815933923032831,
+          "fraction_expressing_in": 0.6685714285714286,
+          "is_technical": false
+        },
+        {
+          "gene": "CFP",
+          "log2_fold_change": 2.4854268240609803,
+          "statistic": 399513.0,
+          "p_value": 2.45247238617197e-103,
+          "q_value": 1.3774719902332566e-101,
+          "mean_in_group": 0.6784100590433393,
+          "mean_out_group": 0.1129793544663465,
+          "fraction_expressing_in": 0.6285714285714286,
+          "is_technical": false
+        },
+        {
+          "gene": "PSAP",
+          "log2_fold_change": 1.8320061707479744,
+          "statistic": 443109.5,
+          "p_value": 2.7849615699210966e-103,
+          "q_value": 1.5219438633460693e-101,
+          "mean_in_group": 1.4480962930406842,
+          "mean_out_group": 0.4561250303837067,
+          "fraction_expressing_in": 0.9171428571428571,
+          "is_technical": false
+        },
+        {
+          "gene": "IFI30",
+          "log2_fold_change": 2.363534798645901,
+          "statistic": 386786.0,
+          "p_value": 3.218307175599653e-103,
+          "q_value": 1.712478186595394e-101,
+          "mean_in_group": 0.5299317479133606,
+          "mean_out_group": 0.08365785836535979,
+          "fraction_expressing_in": 0.56,
+          "is_technical": false
+        },
+        {
+          "gene": "OAZ1",
+          "log2_fold_change": 1.2928038096695433,
+          "statistic": 450874.5,
+          "p_value": 4.5638787767622863e-100,
+          "q_value": 2.3661956119521394e-98,
+          "mean_in_group": 2.229393196105957,
+          "mean_out_group": 1.2535750864342572,
+          "fraction_expressing_in": 0.9971428571428571,
+          "is_technical": false
+        },
+        {
+          "gene": "NUP214",
+          "log2_fold_change": 3.2973171969881876,
+          "statistic": 377934.0,
+          "p_value": 2.747450038306163e-99,
+          "q_value": 1.3888359943637654e-97,
+          "mean_in_group": 0.42863167115620204,
+          "mean_out_group": 0.04738266232179448,
+          "fraction_expressing_in": 0.5,
+          "is_technical": false
+        },
+        {
+          "gene": "LTB",
+          "log2_fold_change": -3.83865722810846,
+          "statistic": 77928.5,
+          "p_value": 1.7288951240865227e-96,
+          "q_value": 8.526404733909632e-95,
+          "mean_in_group": 0.18911725044250488,
+          "mean_out_group": 1.33465172206973,
+          "fraction_expressing_in": 0.22857142857142856,
+          "is_technical": false
+        },
+        {
+          "gene": "COTL1",
+          "log2_fold_change": 1.4841767719074432,
+          "statistic": 442573.0,
+          "p_value": 2.4034304534433556e-96,
+          "q_value": 1.1570800897291583e-94,
+          "mean_in_group": 1.735313846724374,
+          "mean_out_group": 0.6737629068407783,
+          "fraction_expressing_in": 0.9657142857142857,
+          "is_technical": false
+        },
+        {
+          "gene": "FOLR3",
+          "log2_fold_change": 6.433552758052697,
+          "statistic": 339756.5,
+          "p_value": 2.863907635586671e-96,
+          "q_value": 1.3467026137572672e-94,
+          "mean_in_group": 0.26340168135506764,
+          "mean_out_group": 0.003977702263204809,
+          "fraction_expressing_in": 0.3028571428571429,
+          "is_technical": false
+        },
+        {
+          "gene": "ALDH2",
+          "log2_fold_change": 3.268629675949197,
+          "statistic": 362770.0,
+          "p_value": 8.561524785252284e-96,
+          "q_value": 3.9344097990409363e-94,
+          "mean_in_group": 0.38549281120300294,
+          "mean_out_group": 0.03231223923637268,
+          "fraction_expressing_in": 0.42,
+          "is_technical": false
+        },
+        {
+          "gene": "IFITM3",
+          "log2_fold_change": 1.8915032491815251,
+          "statistic": 395901.5,
+          "p_value": 1.2608259813212145e-92,
+          "q_value": 5.665311409403324e-91,
+          "mean_in_group": 0.8345539198602949,
+          "mean_out_group": 0.1792887931360918,
+          "fraction_expressing_in": 0.6428571428571429,
+          "is_technical": false
+        },
+        {
+          "gene": "SPI1",
+          "log2_fold_change": 2.0782311800457745,
+          "statistic": 391005.0,
+          "p_value": 3.234805345474405e-89,
+          "q_value": 1.4219079149020102e-87,
+          "mean_in_group": 0.6675259225709098,
+          "mean_out_group": 0.14346495039641538,
+          "fraction_expressing_in": 0.6228571428571429,
+          "is_technical": false
+        },
+        {
+          "gene": "TNFSF13B",
+          "log2_fold_change": 3.1085073510815007,
+          "statistic": 374352.0,
+          "p_value": 2.109056331421564e-88,
+          "q_value": 9.073429579009366e-87,
+          "mean_in_group": 0.4749818566867283,
+          "mean_out_group": 0.06491211901374042,
+          "fraction_expressing_in": 0.5,
+          "is_technical": false
+        },
+        {
+          "gene": "FPR1",
+          "log2_fold_change": 3.4232579660528493,
+          "statistic": 359316.5,
+          "p_value": 2.8105512184162856e-87,
+          "q_value": 1.1839447007578604e-85,
+          "mean_in_group": 0.36262254919324605,
+          "mean_out_group": 0.035942516862389876,
+          "fraction_expressing_in": 0.4142857142857143,
+          "is_technical": false
+        },
+        {
+          "gene": "IGSF6",
+          "log2_fold_change": 3.0625164570680043,
+          "statistic": 359898.0,
+          "p_value": 7.360473428163297e-87,
+          "q_value": 3.037321892193099e-85,
+          "mean_in_group": 0.357121570450919,
+          "mean_out_group": 0.04018136237394364,
+          "fraction_expressing_in": 0.42,
+          "is_technical": false
+        },
+        {
+          "gene": "RBP7",
+          "log2_fold_change": 4.993803654646411,
+          "statistic": 339162.5,
+          "p_value": 9.744723707205135e-85,
+          "q_value": 3.940766267193757e-83,
+          "mean_in_group": 0.25996568134852815,
+          "mean_out_group": 0.010001040078739431,
+          "fraction_expressing_in": 0.30857142857142855,
+          "is_technical": false
+        }
+      ],
+      "CD4 T cells": [
+        {
+          "gene": "HLA-DRB1",
+          "log2_fold_change": -4.608171250269756,
+          "statistic": 143155.5,
+          "p_value": 8.148049700145182e-152,
+          "q_value": 1.6475356493693556e-148,
+          "mean_in_group": 0.10307056788573131,
+          "mean_out_group": 1.1755105136700397,
+          "fraction_expressing_in": 0.1272264631043257,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRA",
+          "log2_fold_change": -4.743098929642338,
+          "statistic": 144176.0,
+          "p_value": 2.391043953166106e-140,
+          "q_value": 2.417345436650933e-137,
+          "mean_in_group": 0.22709874721580486,
+          "mean_out_group": 1.6910565347041724,
+          "fraction_expressing_in": 0.2811704834605598,
+          "is_technical": false
+        },
+        {
+          "gene": "CD74",
+          "log2_fold_change": -3.116263371540343,
+          "statistic": 145591.5,
+          "p_value": 1.3309772356050737e-128,
+          "q_value": 8.970786567978196e-126,
+          "mean_in_group": 0.7637189370378586,
+          "mean_out_group": 2.068981740609655,
+          "fraction_expressing_in": 0.732824427480916,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DPA1",
+          "log2_fold_change": -4.091157717666274,
+          "statistic": 163622.0,
+          "p_value": 7.43334463316614e-127,
+          "q_value": 3.757555712065484e-124,
+          "mean_in_group": 0.16301559067257793,
+          "mean_out_group": 1.1563351565936826,
+          "fraction_expressing_in": 0.21119592875318066,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DPB1",
+          "log2_fold_change": -3.8913101192734976,
+          "statistic": 160927.0,
+          "p_value": 1.0235687867801724e-126,
+          "q_value": 4.139312173739017e-124,
+          "mean_in_group": 0.19922405951502364,
+          "mean_out_group": 1.2240352162775003,
+          "fraction_expressing_in": 0.24936386768447838,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRB5",
+          "log2_fold_change": -4.843228688740743,
+          "statistic": 185959.0,
+          "p_value": 1.062905345449384e-124,
+          "q_value": 3.5819910141644237e-122,
+          "mean_in_group": 0.040695680765098594,
+          "mean_out_group": 0.7345593325372012,
+          "fraction_expressing_in": 0.05216284987277354,
+          "is_technical": false
+        },
+        {
+          "gene": "TYROBP",
+          "log2_fold_change": -5.459018396552866,
+          "statistic": 187471.0,
+          "p_value": 5.766358236340988e-115,
+          "q_value": 1.665653764840211e-112,
+          "mean_in_group": 0.09304555135828849,
+          "mean_out_group": 1.305486893316485,
+          "fraction_expressing_in": 0.1272264631043257,
+          "is_technical": false
+        },
+        {
+          "gene": "RPS27A",
+          "log2_fold_change": 0.9674651937842594,
+          "statistic": 662149.0,
+          "p_value": 1.823329721135056e-104,
+          "q_value": 4.608465870168854e-102,
+          "mean_in_group": 2.7080111309468897,
+          "mean_out_group": 1.9485337195531378,
+          "fraction_expressing_in": 0.9974554707379135,
+          "is_technical": true
+        },
+        {
+          "gene": "FCER1G",
+          "log2_fold_change": -5.077263868614234,
+          "statistic": 209464.5,
+          "p_value": 1.3303075885018444e-100,
+          "q_value": 2.98875771550081e-98,
+          "mean_in_group": 0.07312862624345541,
+          "mean_out_group": 0.9581191733198345,
+          "fraction_expressing_in": 0.10178117048346055,
+          "is_technical": false
+        },
+        {
+          "gene": "LTB",
+          "log2_fold_change": 1.4658286903498225,
+          "statistic": 646575.5,
+          "p_value": 6.575370564291821e-95,
+          "q_value": 1.3295399280998061e-92,
+          "mean_in_group": 1.6417227514827524,
+          "mean_out_group": 0.7287131426469335,
+          "fraction_expressing_in": 0.9223918575063613,
+          "is_technical": false
+        },
+        {
+          "gene": "IL7R",
+          "log2_fold_change": 1.8980084108740516,
+          "statistic": 612435.5,
+          "p_value": 2.8912361155904826e-86,
+          "q_value": 5.314617659749051e-84,
+          "mean_in_group": 0.713051014425797,
+          "mean_out_group": 0.20160992123046012,
+          "fraction_expressing_in": 0.6526717557251909,
+          "is_technical": false
+        },
+        {
+          "gene": "RPS3A",
+          "log2_fold_change": 0.8496466283543195,
+          "statistic": 631337.5,
+          "p_value": 2.474985032260514e-80,
+          "q_value": 4.1703497793589664e-78,
+          "mean_in_group": 2.7334508589509183,
+          "mean_out_group": 2.0791343260486173,
+          "fraction_expressing_in": 0.9949109414758269,
+          "is_technical": true
+        },
+        {
+          "gene": "HLA-DMA",
+          "log2_fold_change": -4.211050464637695,
+          "statistic": 251332.5,
+          "p_value": 1.17703660022476e-77,
+          "q_value": 1.8307446197342037e-75,
+          "mean_in_group": 0.036672391357616005,
+          "mean_out_group": 0.45919367423597374,
+          "fraction_expressing_in": 0.05089058524173028,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A9",
+          "log2_fold_change": -5.708587313214054,
+          "statistic": 235197.5,
+          "p_value": 1.3227906653165792e-77,
+          "q_value": 1.9104876609072308e-75,
+          "mean_in_group": 0.10743931534939444,
+          "mean_out_group": 1.242474496477055,
+          "fraction_expressing_in": 0.1450381679389313,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS1",
+          "log2_fold_change": -3.217504438139085,
+          "statistic": 220672.0,
+          "p_value": 1.61312898834403e-77,
+          "q_value": 2.1744978762877525e-75,
+          "mean_in_group": 0.27356561631646775,
+          "mean_out_group": 1.203620842605267,
+          "fraction_expressing_in": 0.2862595419847328,
+          "is_technical": false
+        },
+        {
+          "gene": "CST3",
+          "log2_fold_change": -4.931410601654202,
+          "statistic": 233217.5,
+          "p_value": 3.5067114292995887e-74,
+          "q_value": 4.431606568777355e-72,
+          "mean_in_group": 0.15785133413989427,
+          "mean_out_group": 1.2839896153728918,
+          "fraction_expressing_in": 0.20865139949109415,
+          "is_technical": false
+        },
+        {
+          "gene": "TPT1",
+          "log2_fold_change": 0.75346079414989,
+          "statistic": 622458.5,
+          "p_value": 4.3072345719827434e-74,
+          "q_value": 5.12307547326418e-72,
+          "mean_in_group": 2.490634784898685,
+          "mean_out_group": 1.9500743382381942,
+          "fraction_expressing_in": 0.9936386768447837,
+          "is_technical": false
+        },
+        {
+          "gene": "MALAT1",
+          "log2_fold_change": 0.6273539557304195,
+          "statistic": 622533.0,
+          "p_value": 6.428146129937115e-74,
+          "q_value": 7.220950819296026e-72,
+          "mean_in_group": 4.23808031531084,
+          "mean_out_group": 3.670739250925352,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "OAZ1",
+          "log2_fold_change": -1.592266984079047,
+          "statistic": 212701.0,
+          "p_value": 1.2406239033417756e-73,
+          "q_value": 1.3202850171353002e-71,
+          "mean_in_group": 1.0402126994751792,
+          "mean_out_group": 1.733989402033248,
+          "fraction_expressing_in": 0.8753180661577609,
+          "is_technical": false
+        },
+        {
+          "gene": "CFD",
+          "log2_fold_change": -5.0431892811314345,
+          "statistic": 266139.0,
+          "p_value": 1.3596656090508422e-70,
+          "q_value": 1.3746219307504016e-68,
+          "mean_in_group": 0.026455999330709908,
+          "mean_out_group": 0.49903546268085264,
+          "fraction_expressing_in": 0.03816793893129771,
+          "is_technical": false
+        },
+        {
+          "gene": "FCN1",
+          "log2_fold_change": -4.653559091674916,
+          "statistic": 253285.0,
+          "p_value": 2.775009260716627e-70,
+          "q_value": 2.6719374881757238e-68,
+          "mean_in_group": 0.07327847747705668,
+          "mean_out_group": 0.7760471051593997,
+          "fraction_expressing_in": 0.09923664122137404,
+          "is_technical": false
+        },
+        {
+          "gene": "TYMP",
+          "log2_fold_change": -3.6228329238334913,
+          "statistic": 245904.5,
+          "p_value": 3.570096676059641e-70,
+          "q_value": 3.281243399542088e-68,
+          "mean_in_group": 0.10915254818574163,
+          "mean_out_group": 0.723324789191192,
+          "fraction_expressing_in": 0.14376590330788805,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQA1",
+          "log2_fold_change": -5.755063872813662,
+          "statistic": 272863.0,
+          "p_value": 3.842750737378535e-70,
+          "q_value": 3.378279126512782e-68,
+          "mean_in_group": 0.014259717543313219,
+          "mean_out_group": 0.4579687051053317,
+          "fraction_expressing_in": 0.017811704834605598,
+          "is_technical": false
+        },
+        {
+          "gene": "LST1",
+          "log2_fold_change": -4.293230290555493,
+          "statistic": 244953.5,
+          "p_value": 1.0416804806117439e-69,
+          "q_value": 8.776158049153942e-68,
+          "mean_in_group": 0.12407797590163525,
+          "mean_out_group": 0.9159027592191157,
+          "fraction_expressing_in": 0.16030534351145037,
+          "is_technical": false
+        },
+        {
+          "gene": "SPI1",
+          "log2_fold_change": -5.326389864044633,
+          "statistic": 274701.0,
+          "p_value": 4.6091396654099505e-68,
+          "q_value": 3.727872161383568e-66,
+          "mean_in_group": 0.015873599598425946,
+          "mean_out_group": 0.4111141409514085,
+          "fraction_expressing_in": 0.022900763358778626,
+          "is_technical": false
+        },
+        {
+          "gene": "CD68",
+          "log2_fold_change": -4.670074950869222,
+          "statistic": 274054.0,
+          "p_value": 5.577126262027273e-66,
+          "q_value": 4.3372881930073637e-64,
+          "mean_in_group": 0.025723983919954178,
+          "mean_out_group": 0.43525405312484167,
+          "fraction_expressing_in": 0.035623409669211195,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS2",
+          "log2_fold_change": -5.589128026574996,
+          "statistic": 276372.0,
+          "p_value": 1.847731224012286e-65,
+          "q_value": 1.3837453833158676e-63,
+          "mean_in_group": 0.022046666108924924,
+          "mean_out_group": 0.5277551057203761,
+          "fraction_expressing_in": 0.031806615776081425,
+          "is_technical": false
+        },
+        {
+          "gene": "FTL",
+          "log2_fold_change": -2.846742309085647,
+          "statistic": 223713.5,
+          "p_value": 2.818859197956155e-65,
+          "q_value": 2.0356190350954803e-63,
+          "mean_in_group": 1.7897272786414653,
+          "mean_out_group": 2.9865135219861876,
+          "fraction_expressing_in": 0.9770992366412213,
+          "is_technical": false
+        },
+        {
+          "gene": "SAT1",
+          "log2_fold_change": -2.6464698005701233,
+          "statistic": 232014.5,
+          "p_value": 8.703491513114896e-65,
+          "q_value": 6.068434427420109e-63,
+          "mean_in_group": 0.3868473813733982,
+          "mean_out_group": 1.1394999487220117,
+          "fraction_expressing_in": 0.43765903307888043,
+          "is_technical": false
+        },
+        {
+          "gene": "CTSS",
+          "log2_fold_change": -2.8208538246104817,
+          "statistic": 236231.0,
+          "p_value": 1.8060435323710934e-64,
+          "q_value": 1.217273340818117e-62,
+          "mean_in_group": 0.2881656985246498,
+          "mean_out_group": 0.9980180964155018,
+          "fraction_expressing_in": 0.361323155216285,
+          "is_technical": false
+        },
+        {
+          "gene": "SRGN",
+          "log2_fold_change": -2.032782372707275,
+          "statistic": 232997.5,
+          "p_value": 5.964846014136374e-64,
+          "q_value": 3.890618916317338e-62,
+          "mean_in_group": 0.39399675270376616,
+          "mean_out_group": 1.0028973048588015,
+          "fraction_expressing_in": 0.44783715012722647,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A8",
+          "log2_fold_change": -5.454843218762708,
+          "statistic": 269192.5,
+          "p_value": 5.254866007698575e-61,
+          "q_value": 3.320418458614537e-59,
+          "mean_in_group": 0.07042887920641717,
+          "mean_out_group": 0.9171358685448484,
+          "fraction_expressing_in": 0.09287531806615776,
+          "is_technical": false
+        },
+        {
+          "gene": "PSAP",
+          "log2_fold_change": -2.264935535349992,
+          "statistic": 242552.0,
+          "p_value": 1.3697116960651244e-60,
+          "q_value": 8.392597119526308e-59,
+          "mean_in_group": 0.287712307376716,
+          "mean_out_group": 0.9085423343586472,
+          "fraction_expressing_in": 0.356234096692112,
+          "is_technical": false
+        },
+        {
+          "gene": "IFITM3",
+          "log2_fold_change": -4.9680678452311176,
+          "statistic": 280750.5,
+          "p_value": 2.1976941228393158e-60,
+          "q_value": 1.3069816224650284e-58,
+          "mean_in_group": 0.03241290936943229,
+          "mean_out_group": 0.5045597733191725,
+          "fraction_expressing_in": 0.044529262086514,
+          "is_technical": false
+        },
+        {
+          "gene": "GSTP1",
+          "log2_fold_change": -2.573087013074547,
+          "statistic": 248547.0,
+          "p_value": 2.784156557482451e-59,
+          "q_value": 1.6084470169227185e-57,
+          "mean_in_group": 0.22291621725067837,
+          "mean_out_group": 0.7682154535122637,
+          "fraction_expressing_in": 0.28498727735368956,
+          "is_technical": false
+        },
+        {
+          "gene": "CCR7",
+          "log2_fold_change": 2.732878533815367,
+          "statistic": 543015.0,
+          "p_value": 3.0665799173799008e-59,
+          "q_value": 1.722395720261711e-57,
+          "mean_in_group": 0.31194307785907777,
+          "mean_out_group": 0.05090683811115769,
+          "fraction_expressing_in": 0.366412213740458,
+          "is_technical": false
+        },
+        {
+          "gene": "FGR",
+          "log2_fold_change": -4.140078908177301,
+          "statistic": 287127.0,
+          "p_value": 3.014014662118808e-58,
+          "q_value": 1.647118282920062e-56,
+          "mean_in_group": 0.023810399397638918,
+          "mean_out_group": 0.315440327603862,
+          "fraction_expressing_in": 0.03435114503816794,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQB1",
+          "log2_fold_change": -3.8917082151376947,
+          "statistic": 281320.0,
+          "p_value": 1.6002901529679613e-57,
+          "q_value": 8.515228129740047e-56,
+          "mean_in_group": 0.04527490132940938,
+          "mean_out_group": 0.4322236840455037,
+          "fraction_expressing_in": 0.058524173027989825,
+          "is_technical": false
+        },
+        {
+          "gene": "LYZ",
+          "log2_fold_change": -4.5058225766011555,
+          "statistic": 243360.0,
+          "p_value": 6.958481013521823e-57,
+          "q_value": 3.60770477162593e-55,
+          "mean_in_group": 0.42670805156989255,
+          "mean_out_group": 1.6896882555394803,
+          "fraction_expressing_in": 0.49872773536895676,
+          "is_technical": false
+        },
+        {
+          "gene": "IFI30",
+          "log2_fold_change": -6.599755440413787,
+          "statistic": 300613.0,
+          "p_value": 1.0569268239790836e-56,
+          "q_value": 5.3427650952142676e-55,
+          "mean_in_group": 0.00404332551640712,
+          "mean_out_group": 0.2900473717248665,
+          "fraction_expressing_in": 0.005089058524173028,
+          "is_technical": false
+        },
+        {
+          "gene": "SERPINA1",
+          "log2_fold_change": -4.000487827458158,
+          "statistic": 282103.5,
+          "p_value": 1.4565445759206596e-56,
+          "q_value": 7.183251542711156e-55,
+          "mean_in_group": 0.04564090903478724,
+          "mean_out_group": 0.45083977400131947,
+          "fraction_expressing_in": 0.06361323155216285,
+          "is_technical": false
+        },
+        {
+          "gene": "CD27",
+          "log2_fold_change": 1.9464814270865227,
+          "statistic": 549451.0,
+          "p_value": 8.223416749935563e-56,
+          "q_value": 3.958987778183264e-54,
+          "mean_in_group": 0.35360531649213406,
+          "mean_out_group": 0.08893108334181443,
+          "fraction_expressing_in": 0.42366412213740456,
+          "is_technical": false
+        },
+        {
+          "gene": "LEF1",
+          "log2_fold_change": 2.9561250242318877,
+          "statistic": 525951.5,
+          "p_value": 2.760756067357603e-52,
+          "q_value": 1.298197387952808e-50,
+          "mean_in_group": 0.2548996856194416,
+          "mean_out_group": 0.035533503766329785,
+          "fraction_expressing_in": 0.30788804071246817,
+          "is_technical": false
+        },
+        {
+          "gene": "AIF1",
+          "log2_fold_change": -3.500757134985088,
+          "statistic": 267228.5,
+          "p_value": 4.865653263445842e-52,
+          "q_value": 2.235988840610794e-50,
+          "mean_in_group": 0.17849602711413046,
+          "mean_out_group": 0.9444214061746058,
+          "fraction_expressing_in": 0.22010178117048346,
+          "is_technical": false
+        },
+        {
+          "gene": "AES",
+          "log2_fold_change": 1.2811003195880661,
+          "statistic": 568980.0,
+          "p_value": 1.194302740666049e-48,
+          "q_value": 5.366400314726113e-47,
+          "mean_in_group": 0.6685883129826029,
+          "mean_out_group": 0.31070359484204707,
+          "fraction_expressing_in": 0.6755725190839694,
+          "is_technical": false
+        },
+        {
+          "gene": "CDA",
+          "log2_fold_change": -5.387296513273223,
+          "statistic": 315075.0,
+          "p_value": 3.992706664559141e-47,
+          "q_value": 1.7550549729866485e-45,
+          "mean_in_group": 0.007936799799212973,
+          "mean_out_group": 0.2422429327694875,
+          "fraction_expressing_in": 0.011450381679389313,
+          "is_technical": false
+        },
+        {
+          "gene": "CFP",
+          "log2_fold_change": -3.788585424348625,
+          "statistic": 300811.0,
+          "p_value": 6.406130647283387e-47,
+          "q_value": 2.755999184852555e-45,
+          "mean_in_group": 0.03880213235170787,
+          "mean_out_group": 0.3546812819984724,
+          "fraction_expressing_in": 0.05597964376590331,
+          "is_technical": false
+        },
+        {
+          "gene": "CD2",
+          "log2_fold_change": 1.5895050407311335,
+          "statistic": 549433.5,
+          "p_value": 7.076182456517019e-47,
+          "q_value": 2.980841859807794e-45,
+          "mean_in_group": 0.44657427724687804,
+          "mean_out_group": 0.15837183144857298,
+          "fraction_expressing_in": 0.4961832061068702,
+          "is_technical": false
+        },
+        {
+          "gene": "NPC2",
+          "log2_fold_change": -2.474664017512317,
+          "statistic": 270858.0,
+          "p_value": 7.757034773323474e-47,
+          "q_value": 3.200964145236748e-45,
+          "mean_in_group": 0.2080065943205933,
+          "mean_out_group": 0.686424824426759,
+          "fraction_expressing_in": 0.27353689567430023,
+          "is_technical": false
+        },
+        {
+          "gene": "NCF2",
+          "log2_fold_change": -3.9890053845386717,
+          "statistic": 307148.0,
+          "p_value": 1.0451896420081204e-46,
+          "q_value": 4.226746912280838e-45,
+          "mean_in_group": 0.02484211727559718,
+          "mean_out_group": 0.2802533659170259,
+          "fraction_expressing_in": 0.03435114503816794,
+          "is_technical": false
+        }
+      ],
+      "CD8 T cells": [
+        {
+          "gene": "CCL5",
+          "log2_fold_change": 3.1259988569590766,
+          "statistic": 334070.5,
+          "p_value": 1.696847914226825e-129,
+          "q_value": 3.43102648256664e-126,
+          "mean_in_group": 2.0511126001324276,
+          "mean_out_group": 0.31881311947916763,
+          "fraction_expressing_in": 0.9336283185840708,
+          "is_technical": false
+        },
+        {
+          "gene": "GZMK",
+          "log2_fold_change": 4.202080455984407,
+          "statistic": 282771.5,
+          "p_value": 3.2441513901643335e-124,
+          "q_value": 3.279837055456141e-121,
+          "mean_in_group": 0.8206324113153778,
+          "mean_out_group": 0.05382619227892087,
+          "fraction_expressing_in": 0.584070796460177,
+          "is_technical": false
+        },
+        {
+          "gene": "NKG7",
+          "log2_fold_change": 2.3020914000741763,
+          "statistic": 319192.0,
+          "p_value": 6.1589885954160385e-111,
+          "q_value": 4.15115831331041e-108,
+          "mean_in_group": 1.8320383582494955,
+          "mean_out_group": 0.33411613636546666,
+          "fraction_expressing_in": 0.8938053097345132,
+          "is_technical": false
+        },
+        {
+          "gene": "GZMA",
+          "log2_fold_change": 2.286471862550059,
+          "statistic": 300298.5,
+          "p_value": 1.236081656783968e-108,
+          "q_value": 6.2483927750429585e-106,
+          "mean_in_group": 0.904383734264205,
+          "mean_out_group": 0.15813431062816102,
+          "fraction_expressing_in": 0.7699115044247787,
+          "is_technical": false
+        },
+        {
+          "gene": "CST7",
+          "log2_fold_change": 2.33802493504193,
+          "statistic": 296069.0,
+          "p_value": 1.3382438620902921e-105,
+          "q_value": 5.411858178293141e-103,
+          "mean_in_group": 0.8870297570144181,
+          "mean_out_group": 0.14775656042275606,
+          "fraction_expressing_in": 0.7345132743362832,
+          "is_technical": false
+        },
+        {
+          "gene": "CD8A",
+          "log2_fold_change": 3.3902197735686768,
+          "statistic": 265062.0,
+          "p_value": 1.891770397332761e-86,
+          "q_value": 6.375266239011405e-84,
+          "mean_in_group": 0.46972097179530997,
+          "mean_out_group": 0.05031231038364363,
+          "fraction_expressing_in": 0.504424778761062,
+          "is_technical": false
+        },
+        {
+          "gene": "CTSW",
+          "log2_fold_change": 2.2045544977469045,
+          "statistic": 298030.0,
+          "p_value": 2.4552970178879414e-80,
+          "q_value": 7.0923008145277395e-78,
+          "mean_in_group": 0.9702262741274539,
+          "mean_out_group": 0.2337947364942527,
+          "fraction_expressing_in": 0.8097345132743363,
+          "is_technical": false
+        },
+        {
+          "gene": "KLRG1",
+          "log2_fold_change": 2.978335526484056,
+          "statistic": 249244.5,
+          "p_value": 2.207890016277602e-58,
+          "q_value": 5.580442016141639e-56,
+          "mean_in_group": 0.3906751744515073,
+          "mean_out_group": 0.05526086651248696,
+          "fraction_expressing_in": 0.4247787610619469,
+          "is_technical": false
+        },
+        {
+          "gene": "GZMH",
+          "log2_fold_change": 3.4302561164450944,
+          "statistic": 243758.5,
+          "p_value": 7.953108501389553e-55,
+          "q_value": 1.7867983766455192e-52,
+          "mean_in_group": 0.6043928597880676,
+          "mean_out_group": 0.06696600273803428,
+          "fraction_expressing_in": 0.3805309734513274,
+          "is_technical": false
+        },
+        {
+          "gene": "LYAR",
+          "log2_fold_change": 2.2406951061171827,
+          "statistic": 261437.5,
+          "p_value": 1.8983091027213528e-54,
+          "q_value": 3.838381005702576e-52,
+          "mean_in_group": 0.5045702351933032,
+          "mean_out_group": 0.1092023895110613,
+          "fraction_expressing_in": 0.5486725663716814,
+          "is_technical": false
+        },
+        {
+          "gene": "LAG3",
+          "log2_fold_change": 3.5461431760669906,
+          "statistic": 210543.5,
+          "p_value": 2.930496241577269e-33,
+          "q_value": 5.386784909517489e-31,
+          "mean_in_group": 0.126038502802891,
+          "mean_out_group": 0.01059183986098678,
+          "fraction_expressing_in": 0.16371681415929204,
+          "is_technical": false
+        },
+        {
+          "gene": "PRF1",
+          "log2_fold_change": 1.2304050762307899,
+          "statistic": 238481.0,
+          "p_value": 1.061704872139139e-31,
+          "q_value": 1.788972709554449e-29,
+          "mean_in_group": 0.42881166460239784,
+          "mean_out_group": 0.1467907851860847,
+          "fraction_expressing_in": 0.42920353982300885,
+          "is_technical": false
+        },
+        {
+          "gene": "TIGIT",
+          "log2_fold_change": 1.8415991189070253,
+          "statistic": 218895.5,
+          "p_value": 3.6298335262355436e-28,
+          "q_value": 5.645787223114053e-26,
+          "mean_in_group": 0.19814352229633161,
+          "mean_out_group": 0.038409249870865435,
+          "fraction_expressing_in": 0.23893805309734514,
+          "is_technical": false
+        },
+        {
+          "gene": "FTH1",
+          "log2_fold_change": -2.165323112484542,
+          "statistic": 109273.5,
+          "p_value": 6.95312019058301e-23,
+          "q_value": 1.0042292160970603e-20,
+          "mean_in_group": 1.6887867192251493,
+          "mean_out_group": 2.469753803073624,
+          "fraction_expressing_in": 0.9867256637168141,
+          "is_technical": false
+        },
+        {
+          "gene": "TMSB10",
+          "log2_fold_change": -0.6832335312102887,
+          "statistic": 110312.5,
+          "p_value": 3.008511695759472e-22,
+          "q_value": 3.9979535569142583e-20,
+          "mean_in_group": 2.0828352185477197,
+          "mean_out_group": 2.540973878127557,
+          "fraction_expressing_in": 0.9823008849557522,
+          "is_technical": false
+        },
+        {
+          "gene": "CTSS",
+          "log2_fold_change": -2.9697985050749067,
+          "statistic": 114692.5,
+          "p_value": 3.1635636454316585e-22,
+          "q_value": 3.9979535569142583e-20,
+          "mean_in_group": 0.20271407608437328,
+          "mean_out_group": 0.7645580494109495,
+          "fraction_expressing_in": 0.26991150442477874,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRA",
+          "log2_fold_change": -3.5942013138803177,
+          "statistic": 113984.0,
+          "p_value": 5.035100482322286e-22,
+          "q_value": 5.988807750150389e-20,
+          "mean_in_group": 0.2994914371355445,
+          "mean_out_group": 1.174897825497168,
+          "fraction_expressing_in": 0.33185840707964603,
+          "is_technical": false
+        },
+        {
+          "gene": "CCL4",
+          "log2_fold_change": 1.0438302477154855,
+          "statistic": 222381.0,
+          "p_value": 7.29419111932839e-21,
+          "q_value": 7.762554970148424e-19,
+          "mean_in_group": 0.3205448763560405,
+          "mean_out_group": 0.10196285490636472,
+          "fraction_expressing_in": 0.3053097345132743,
+          "is_technical": false
+        },
+        {
+          "gene": "AIF1",
+          "log2_fold_change": -4.2999312185458916,
+          "statistic": 121920.0,
+          "p_value": 7.002486643435385e-21,
+          "q_value": 7.762554970148424e-19,
+          "mean_in_group": 0.08616720469652024,
+          "mean_out_group": 0.69253751826875,
+          "fraction_expressing_in": 0.10619469026548672,
+          "is_technical": false
+        },
+        {
+          "gene": "FCER1G",
+          "log2_fold_change": -3.7001428480202176,
+          "statistic": 126079.5,
+          "p_value": 9.856352968637875e-19,
+          "q_value": 9.964772851292892e-17,
+          "mean_in_group": 0.09825567914321359,
+          "mean_out_group": 0.6486911360864286,
+          "fraction_expressing_in": 0.11061946902654868,
+          "is_technical": false
+        },
+        {
+          "gene": "CST3",
+          "log2_fold_change": -4.685617203587639,
+          "statistic": 124243.5,
+          "p_value": 1.1770155095333766e-18,
+          "q_value": 1.1332977906078511e-16,
+          "mean_in_group": 0.12858436170932466,
+          "mean_out_group": 0.8987901698659968,
+          "fraction_expressing_in": 0.168141592920354,
+          "is_technical": false
+        },
+        {
+          "gene": "C1orf162",
+          "log2_fold_change": -2.0091086098810575,
+          "statistic": 125484.0,
+          "p_value": 1.9920959275152126e-18,
+          "q_value": 1.8309172570162543e-16,
+          "mean_in_group": 0.10989665563127636,
+          "mean_out_group": 0.4255528784828422,
+          "fraction_expressing_in": 0.13274336283185842,
+          "is_technical": false
+        },
+        {
+          "gene": "PRR5",
+          "log2_fold_change": 3.1205750635680287,
+          "statistic": 209014.0,
+          "p_value": 9.557724132048848e-18,
+          "q_value": 8.402486171740335e-16,
+          "mean_in_group": 0.14646533527205477,
+          "mean_out_group": 0.029114061814767344,
+          "fraction_expressing_in": 0.18141592920353983,
+          "is_technical": false
+        },
+        {
+          "gene": "LST1",
+          "log2_fold_change": -4.002147462392285,
+          "statistic": 128108.5,
+          "p_value": 1.537777347866319e-17,
+          "q_value": 1.2955774155773737e-15,
+          "mean_in_group": 0.09970822587477422,
+          "mean_out_group": 0.6455852807304006,
+          "fraction_expressing_in": 0.12389380530973451,
+          "is_technical": false
+        },
+        {
+          "gene": "NPC2",
+          "log2_fold_change": -2.6358577424754417,
+          "statistic": 126134.0,
+          "p_value": 2.4666235437107577e-17,
+          "q_value": 1.9950051221532607e-15,
+          "mean_in_group": 0.13905835995631935,
+          "mean_out_group": 0.530664387455693,
+          "fraction_expressing_in": 0.1902654867256637,
+          "is_technical": false
+        },
+        {
+          "gene": "TYROBP",
+          "log2_fold_change": -3.866622593988754,
+          "statistic": 126874.0,
+          "p_value": 3.427199774945404e-17,
+          "q_value": 2.665306901899849e-15,
+          "mean_in_group": 0.15949018655625063,
+          "mean_out_group": 0.877101930939121,
+          "fraction_expressing_in": 0.18584070796460178,
+          "is_technical": false
+        },
+        {
+          "gene": "FCN1",
+          "log2_fold_change": -4.396805585458697,
+          "statistic": 131643.0,
+          "p_value": 3.818630438876894e-17,
+          "q_value": 2.8597299064478075e-15,
+          "mean_in_group": 0.056248740812318516,
+          "mean_out_group": 0.5354904934212014,
+          "fraction_expressing_in": 0.07079646017699115,
+          "is_technical": false
+        },
+        {
+          "gene": "LYZ",
+          "log2_fold_change": -4.305360730258657,
+          "statistic": 122286.0,
+          "p_value": 4.025776415390175e-17,
+          "q_value": 2.9071856828281908e-15,
+          "mean_in_group": 0.3632465906902752,
+          "mean_out_group": 1.2619557715492484,
+          "fraction_expressing_in": 0.43805309734513276,
+          "is_technical": false
+        },
+        {
+          "gene": "GPX1",
+          "log2_fold_change": -2.6893235294750153,
+          "statistic": 127303.0,
+          "p_value": 9.805122383412479e-17,
+          "q_value": 6.769294697242465e-15,
+          "mean_in_group": 0.14519240581883794,
+          "mean_out_group": 0.5514938952010355,
+          "fraction_expressing_in": 0.1902654867256637,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A8",
+          "log2_fold_change": -6.124906310397736,
+          "statistic": 133822.0,
+          "p_value": 1.0043463942496238e-16,
+          "q_value": 6.769294697242465e-15,
+          "mean_in_group": 0.036804275175111485,
+          "mean_out_group": 0.6291378725458074,
+          "fraction_expressing_in": 0.05309734513274336,
+          "is_technical": false
+        },
+        {
+          "gene": "APOBEC3G",
+          "log2_fold_change": 1.8826617262944523,
+          "statistic": 227568.0,
+          "p_value": 1.4741196434164975e-16,
+          "q_value": 9.615064254800509e-15,
+          "mean_in_group": 0.37261357138642165,
+          "mean_out_group": 0.14801110993196934,
+          "fraction_expressing_in": 0.42035398230088494,
+          "is_technical": false
+        },
+        {
+          "gene": "NCR3",
+          "log2_fold_change": 1.8831782294364234,
+          "statistic": 215147.0,
+          "p_value": 3.078158062626192e-16,
+          "q_value": 1.945011125821925e-14,
+          "mean_in_group": 0.22366706670913022,
+          "mean_out_group": 0.0640629400441676,
+          "fraction_expressing_in": 0.252212389380531,
+          "is_technical": false
+        },
+        {
+          "gene": "TYMP",
+          "log2_fold_change": -3.1489776042234663,
+          "statistic": 131074.0,
+          "p_value": 4.0545050023468284e-16,
+          "q_value": 2.4843057923470568e-14,
+          "mean_in_group": 0.09918706184994858,
+          "mean_out_group": 0.5124085823694865,
+          "fraction_expressing_in": 0.12389380530973451,
+          "is_technical": false
+        },
+        {
+          "gene": "FGFBP2",
+          "log2_fold_change": 1.0683198559441127,
+          "statistic": 215607.0,
+          "p_value": 5.083862875486341e-16,
+          "q_value": 3.0234031571274653e-14,
+          "mean_in_group": 0.30637775110987436,
+          "mean_out_group": 0.11358115584762007,
+          "fraction_expressing_in": 0.26548672566371684,
+          "is_technical": false
+        },
+        {
+          "gene": "FTL",
+          "log2_fold_change": -2.477383383620445,
+          "statistic": 122787.0,
+          "p_value": 8.710589682635043e-16,
+          "q_value": 5.032232096653731e-14,
+          "mean_in_group": 1.7709314649083974,
+          "mean_out_group": 2.575431767437193,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "CD2",
+          "log2_fold_change": 1.025561979936304,
+          "statistic": 231462.0,
+          "p_value": 2.7398491236980224e-15,
+          "q_value": 1.538881924477056e-13,
+          "mean_in_group": 0.5073369736165072,
+          "mean_out_group": 0.24952059704580426,
+          "fraction_expressing_in": 0.5221238938053098,
+          "is_technical": false
+        },
+        {
+          "gene": "CFP",
+          "log2_fold_change": -5.909944777288004,
+          "statistic": 140980.0,
+          "p_value": 3.0784324422224895e-15,
+          "q_value": 1.682321729236182e-13,
+          "mean_in_group": 0.00613404586251858,
+          "mean_out_group": 0.2500458892480827,
+          "fraction_expressing_in": 0.008849557522123894,
+          "is_technical": false
+        },
+        {
+          "gene": "C12orf75",
+          "log2_fold_change": 1.6252812204431117,
+          "statistic": 217381.5,
+          "p_value": 5.9282892900851726e-15,
+          "q_value": 3.1544739327768996e-13,
+          "mean_in_group": 0.2596646093689235,
+          "mean_out_group": 0.08837648144474736,
+          "fraction_expressing_in": 0.2920353982300885,
+          "is_technical": false
+        },
+        {
+          "gene": "CD37",
+          "log2_fold_change": -0.899063973682975,
+          "statistic": 125785.0,
+          "p_value": 7.157092620083694e-15,
+          "q_value": 3.710677250720315e-13,
+          "mean_in_group": 0.6142620048691741,
+          "mean_out_group": 0.9894890585799276,
+          "fraction_expressing_in": 0.6017699115044248,
+          "is_technical": false
+        },
+        {
+          "gene": "KLRB1",
+          "log2_fold_change": 1.6351482850361776,
+          "statistic": 206340.0,
+          "p_value": 1.4300430666448235e-14,
+          "q_value": 7.228867701889583e-13,
+          "mean_in_group": 0.14062185203079627,
+          "mean_out_group": 0.03421455886628893,
+          "fraction_expressing_in": 0.168141592920354,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS2",
+          "log2_fold_change": -5.254676745920618,
+          "statistic": 141826.0,
+          "p_value": 3.4399389413815946e-14,
+          "q_value": 1.6964772047496548e-12,
+          "mean_in_group": 0.018402137587555743,
+          "mean_out_group": 0.35345074600643583,
+          "fraction_expressing_in": 0.02654867256637168,
+          "is_technical": false
+        },
+        {
+          "gene": "S1PR5",
+          "log2_fold_change": 2.0867115909182474,
+          "statistic": 202282.0,
+          "p_value": 4.868196346830328e-14,
+          "q_value": 2.343688812688315e-12,
+          "mean_in_group": 0.09559887489386365,
+          "mean_out_group": 0.02132909091902368,
+          "fraction_expressing_in": 0.13274336283185842,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A9",
+          "log2_fold_change": -5.313712753761113,
+          "statistic": 135204.0,
+          "p_value": 1.1551056975516677e-13,
+          "q_value": 5.431683070812726e-12,
+          "mean_in_group": 0.12320208127519726,
+          "mean_out_group": 0.8479176529395728,
+          "fraction_expressing_in": 0.17256637168141592,
+          "is_technical": false
+        },
+        {
+          "gene": "PTGDR",
+          "log2_fold_change": 1.2566366814879335,
+          "statistic": 204041.0,
+          "p_value": 1.22369719084803e-13,
+          "q_value": 5.6234448179425375e-12,
+          "mean_in_group": 0.11145515357498574,
+          "mean_out_group": 0.02832927394796301,
+          "fraction_expressing_in": 0.1504424778761062,
+          "is_technical": false
+        },
+        {
+          "gene": "FCGRT",
+          "log2_fold_change": -3.1863068452866004,
+          "statistic": 142052.0,
+          "p_value": 2.9334576080280253e-13,
+          "q_value": 1.3181002852072594e-11,
+          "mean_in_group": 0.03553134572189466,
+          "mean_out_group": 0.2506283579785147,
+          "fraction_expressing_in": 0.048672566371681415,
+          "is_technical": false
+        },
+        {
+          "gene": "FCRL6",
+          "log2_fold_change": 2.6531540093598562,
+          "statistic": 201045.5,
+          "p_value": 6.394817022600478e-13,
+          "q_value": 2.8109391347169924e-11,
+          "mean_in_group": 0.11070338814659456,
+          "mean_out_group": 0.019900073828520597,
+          "fraction_expressing_in": 0.12389380530973451,
+          "is_technical": false
+        },
+        {
+          "gene": "KLRD1",
+          "log2_fold_change": 1.6096523848305964,
+          "statistic": 204779.5,
+          "p_value": 1.120803331552652e-12,
+          "q_value": 4.798772935807531e-11,
+          "mean_in_group": 0.12424440932484855,
+          "mean_out_group": 0.037298669932801044,
+          "fraction_expressing_in": 0.16371681415929204,
+          "is_technical": false
+        },
+        {
+          "gene": "COTL1",
+          "log2_fold_change": -1.8017151080040688,
+          "statistic": 131439.5,
+          "p_value": 1.1391745841679599e-12,
+          "q_value": 4.798772935807531e-11,
+          "mean_in_group": 0.46331499319160935,
+          "mean_out_group": 0.9324691151395256,
+          "fraction_expressing_in": 0.4823008849557522,
+          "is_technical": false
+        },
+        {
+          "gene": "CHST12",
+          "log2_fold_change": 1.4183876975396563,
+          "statistic": 211957.0,
+          "p_value": 1.2630768318467429e-12,
+          "q_value": 5.107882707988228e-11,
+          "mean_in_group": 0.1891730549061193,
+          "mean_out_group": 0.06879033865752043,
+          "fraction_expressing_in": 0.24778761061946902,
+          "is_technical": false
+        },
+        {
+          "gene": "CFD",
+          "log2_fold_change": -3.8577730917583346,
+          "statistic": 143195.5,
+          "p_value": 1.2425304206074613e-12,
+          "q_value": 5.107882707988228e-11,
+          "mean_in_group": 0.03987129810637077,
+          "mean_out_group": 0.33380314354543333,
+          "fraction_expressing_in": 0.05752212389380531,
+          "is_technical": false
+        }
+      ],
+      "Dendritic cells": [
+        {
+          "gene": "FCER1A",
+          "log2_fold_change": 9.164619540809149,
+          "statistic": 34629.0,
+          "p_value": 6.522927430010119e-178,
+          "q_value": 1.318935926348046e-174,
+          "mean_in_group": 1.718701386451721,
+          "mean_out_group": 0.008573221873088056,
+          "fraction_expressing_in": 0.9,
+          "is_technical": false
+        },
+        {
+          "gene": "ENHO",
+          "log2_fold_change": 7.792650518035346,
+          "statistic": 27340.5,
+          "p_value": 9.228578798036125e-126,
+          "q_value": 9.330093164814523e-123,
+          "mean_in_group": 0.4734811544418335,
+          "mean_out_group": 0.002499643056311717,
+          "fraction_expressing_in": 0.5,
+          "is_technical": false
+        },
+        {
+          "gene": "CLEC10A",
+          "log2_fold_change": 7.068936266817197,
+          "statistic": 29986.0,
+          "p_value": 1.0059073172578653e-81,
+          "q_value": 6.779815318318012e-79,
+          "mean_in_group": 0.938763689994812,
+          "mean_out_group": 0.012054113281517405,
+          "fraction_expressing_in": 0.65,
+          "is_technical": false
+        },
+        {
+          "gene": "SERPINF1",
+          "log2_fold_change": 7.927580031019607,
+          "statistic": 24597.0,
+          "p_value": 4.968240923762977e-76,
+          "q_value": 2.511445786962185e-73,
+          "mean_in_group": 0.357730770111084,
+          "mean_out_group": 0.002277592056291127,
+          "fraction_expressing_in": 0.35,
+          "is_technical": false
+        },
+        {
+          "gene": "DNASE1L3",
+          "log2_fold_change": 10.904857765650535,
+          "statistic": 20990.0,
+          "p_value": 2.3659560696834112e-46,
+          "q_value": 9.567926345799714e-44,
+          "mean_in_group": 0.2673553764820099,
+          "mean_out_group": 0.0003795986760485211,
+          "fraction_expressing_in": 0.15,
+          "is_technical": false
+        },
+        {
+          "gene": "CD1C",
+          "log2_fold_change": 5.8845117011611,
+          "statistic": 27154.0,
+          "p_value": 8.575340853005092e-45,
+          "q_value": 2.889889867462716e-42,
+          "mean_in_group": 0.6958094120025635,
+          "mean_out_group": 0.01596367901021784,
+          "fraction_expressing_in": 0.5,
+          "is_technical": false
+        },
+        {
+          "gene": "PHACTR1",
+          "log2_fold_change": 3.611321048498696,
+          "statistic": 28518.5,
+          "p_value": 4.6125403504986e-32,
+          "q_value": 1.33236522695831e-29,
+          "mean_in_group": 0.5054762840270997,
+          "mean_out_group": 0.03263747979359454,
+          "fraction_expressing_in": 0.6,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQA2",
+          "log2_fold_change": 4.387012045934947,
+          "statistic": 33712.0,
+          "p_value": 1.0425704017554438e-30,
+          "q_value": 2.635096690436884e-28,
+          "mean_in_group": 1.3453009843826294,
+          "mean_out_group": 0.10276465648367006,
+          "fraction_expressing_in": 0.9,
+          "is_technical": false
+        },
+        {
+          "gene": "CLEC4C",
+          "log2_fold_change": 8.097502856028012,
+          "statistic": 20076.5,
+          "p_value": 4.8325439949429335e-28,
+          "q_value": 1.0857115508638456e-25,
+          "mean_in_group": 0.08958797454833985,
+          "mean_out_group": 0.0003795986760485211,
+          "fraction_expressing_in": 0.1,
+          "is_technical": false
+        },
+        {
+          "gene": "ZNF503",
+          "log2_fold_change": 3.812103132399479,
+          "statistic": 20959.0,
+          "p_value": 1.1137344954039556e-26,
+          "q_value": 2.2519711497067983e-24,
+          "mean_in_group": 0.12424533367156983,
+          "mean_out_group": 0.0028792417323602383,
+          "fraction_expressing_in": 0.15,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQA1",
+          "log2_fold_change": 4.65871361279155,
+          "statistic": 35777.5,
+          "p_value": 6.5297569379326085e-25,
+          "q_value": 1.2002880480454304e-22,
+          "mean_in_group": 2.4292472541332244,
+          "mean_out_group": 0.2453833627152417,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "CD33",
+          "log2_fold_change": 3.4454287517369475,
+          "statistic": 29045.0,
+          "p_value": 1.2943396817371223e-22,
+          "q_value": 2.1809623637270508e-20,
+          "mean_in_group": 0.6068425655364991,
+          "mean_out_group": 0.05891095560456158,
+          "fraction_expressing_in": 0.65,
+          "is_technical": false
+        },
+        {
+          "gene": "LRRC26",
+          "log2_fold_change": 27.575424820541084,
+          "statistic": 19173.0,
+          "p_value": 1.2985845657801863e-21,
+          "q_value": 1.8755271371482404e-19,
+          "mean_in_group": 0.08047189712524414,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.05,
+          "is_technical": false
+        },
+        {
+          "gene": "LAMP5",
+          "log2_fold_change": 27.160387276765583,
+          "statistic": 19173.0,
+          "p_value": 1.2985845657801863e-21,
+          "q_value": 1.8755271371482404e-19,
+          "mean_in_group": 0.06931471824645996,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.05,
+          "is_technical": false
+        },
+        {
+          "gene": "SPATS2L",
+          "log2_fold_change": 3.927580424124943,
+          "statistic": 25088.0,
+          "p_value": 3.3300242031117202e-21,
+          "q_value": 4.488872625794598e-19,
+          "mean_in_group": 0.3178053855895996,
+          "mean_out_group": 0.02078488283063339,
+          "fraction_expressing_in": 0.4,
+          "is_technical": false
+        },
+        {
+          "gene": "CPVL",
+          "log2_fold_change": 3.8585388009217563,
+          "statistic": 30496.5,
+          "p_value": 8.995731893461572e-21,
+          "q_value": 1.1368356180362063e-18,
+          "mean_in_group": 0.949372410774231,
+          "mean_out_group": 0.09823303161288927,
+          "fraction_expressing_in": 0.75,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DQB1",
+          "log2_fold_change": 4.329561831737606,
+          "statistic": 33951.0,
+          "p_value": 8.188952762382157e-19,
+          "q_value": 9.740036756198073e-17,
+          "mean_in_group": 2.0293972730636596,
+          "mean_out_group": 0.24816825414670127,
+          "fraction_expressing_in": 0.95,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DMA",
+          "log2_fold_change": 3.1820697545037864,
+          "statistic": 34227.0,
+          "p_value": 7.384589042609836e-18,
+          "q_value": 8.295355024531714e-16,
+          "mean_in_group": 1.6486816942691802,
+          "mean_out_group": 0.2642914350557693,
+          "fraction_expressing_in": 0.95,
+          "is_technical": false
+        },
+        {
+          "gene": "PLD4",
+          "log2_fold_change": 4.145760619284153,
+          "statistic": 25734.0,
+          "p_value": 1.9939630786980685e-17,
+          "q_value": 2.1219964974355236e-15,
+          "mean_in_group": 0.43293464183807373,
+          "mean_out_group": 0.034171302112274336,
+          "fraction_expressing_in": 0.45,
+          "is_technical": false
+        },
+        {
+          "gene": "DAB2",
+          "log2_fold_change": 3.988980884012282,
+          "statistic": 21756.0,
+          "p_value": 3.346394822341942e-17,
+          "q_value": 3.383205165387703e-15,
+          "mean_in_group": 0.13862943649291992,
+          "mean_out_group": 0.00689727949286604,
+          "fraction_expressing_in": 0.2,
+          "is_technical": false
+        },
+        {
+          "gene": "IDO1",
+          "log2_fold_change": 8.249507715213046,
+          "statistic": 20057.5,
+          "p_value": 3.7731819341294474e-17,
+          "q_value": 3.633035176576068e-15,
+          "mean_in_group": 0.1497866153717041,
+          "mean_out_group": 0.0011387960281455634,
+          "fraction_expressing_in": 0.1,
+          "is_technical": false
+        },
+        {
+          "gene": "CCDC50",
+          "log2_fold_change": 3.9135052742218828,
+          "statistic": 25752.5,
+          "p_value": 1.4168560324482989e-15,
+          "q_value": 1.245601259830635e-13,
+          "mean_in_group": 0.4479398727416992,
+          "mean_out_group": 0.037099001376286786,
+          "fraction_expressing_in": 0.45,
+          "is_technical": false
+        },
+        {
+          "gene": "CST3",
+          "log2_fold_change": 3.5311186939285726,
+          "statistic": 35084.5,
+          "p_value": 1.4010949734541065e-15,
+          "q_value": 1.245601259830635e-13,
+          "mean_in_group": 3.6302443504333497,
+          "mean_out_group": 0.7735461412489348,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DPB1",
+          "log2_fold_change": 4.233635975320949,
+          "statistic": 36078.5,
+          "p_value": 1.568565561324364e-15,
+          "q_value": 1.3215164854157765e-13,
+          "mean_in_group": 3.5717456102371217,
+          "mean_out_group": 0.7571919648566355,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "H2AFY",
+          "log2_fold_change": 2.321198978959956,
+          "statistic": 33310.5,
+          "p_value": 3.948283534504814e-15,
+          "q_value": 3.193371722707494e-13,
+          "mean_in_group": 1.1895638227462768,
+          "mean_out_group": 0.26360754624645655,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRB5",
+          "log2_fold_change": 3.887239980544269,
+          "statistic": 34156.5,
+          "p_value": 5.304207335738804e-15,
+          "q_value": 4.125041243409177e-13,
+          "mean_in_group": 2.353465712070465,
+          "mean_out_group": 0.41815464585399315,
+          "fraction_expressing_in": 0.95,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DPA1",
+          "log2_fold_change": 3.83384506441991,
+          "statistic": 35344.5,
+          "p_value": 1.0858532785907713e-14,
+          "q_value": 8.131834553001998e-13,
+          "mean_in_group": 3.199939823150635,
+          "mean_out_group": 0.7063782715196808,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRA",
+          "log2_fold_change": 3.829255432547971,
+          "statistic": 35718.5,
+          "p_value": 1.16072031366245e-14,
+          "q_value": 8.38205883651955e-13,
+          "mean_in_group": 4.082494831085205,
+          "mean_out_group": 1.0347040774788288,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "KCNK6",
+          "log2_fold_change": 3.0386117039670713,
+          "statistic": 24096.0,
+          "p_value": 1.2600111564093866e-14,
+          "q_value": 8.785319166413035e-13,
+          "mean_in_group": 0.27725887298583984,
+          "mean_out_group": 0.02370951758026424,
+          "fraction_expressing_in": 0.35,
+          "is_technical": false
+        },
+        {
+          "gene": "HLA-DRB1",
+          "log2_fold_change": 3.952260808102154,
+          "statistic": 35024.0,
+          "p_value": 1.5236672843027256e-14,
+          "q_value": 1.0269517496200371e-12,
+          "mean_in_group": 3.183899259567261,
+          "mean_out_group": 0.6918820512908442,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS2",
+          "log2_fold_change": 2.200694041021724,
+          "statistic": 31399.5,
+          "p_value": 2.037540493256637e-14,
+          "q_value": 1.329002218504813e-12,
+          "mean_in_group": 1.4121761977672578,
+          "mean_out_group": 0.30038640069543726,
+          "fraction_expressing_in": 0.9,
+          "is_technical": false
+        },
+        {
+          "gene": "RP11-545I5.3",
+          "log2_fold_change": 2.6545618085599894,
+          "statistic": 20045.0,
+          "p_value": 2.2626917244460876e-14,
+          "q_value": 1.4297383333843715e-12,
+          "mean_in_group": 0.06931471824645996,
+          "mean_out_group": 0.0029437450563528974,
+          "fraction_expressing_in": 0.1,
+          "is_technical": false
+        },
+        {
+          "gene": "PPP1R14A",
+          "log2_fold_change": 3.565010326006067,
+          "statistic": 22514.0,
+          "p_value": 1.4632767699238344e-13,
+          "q_value": 8.96589584480604e-12,
+          "mean_in_group": 0.21383330821990967,
+          "mean_out_group": 0.01512006183051854,
+          "fraction_expressing_in": 0.25,
+          "is_technical": false
+        },
+        {
+          "gene": "CD74",
+          "log2_fold_change": 3.583850712941351,
+          "statistic": 35178.0,
+          "p_value": 6.290865311648266e-13,
+          "q_value": 3.741214605927292e-11,
+          "mean_in_group": 4.219727683067322,
+          "mean_out_group": 1.4835756713563224,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "MNDA",
+          "log2_fold_change": 2.868686758628376,
+          "statistic": 28139.0,
+          "p_value": 7.905085695263876e-13,
+          "q_value": 4.5668809359495873e-11,
+          "mean_in_group": 0.6702681303024292,
+          "mean_out_group": 0.10724342718051272,
+          "fraction_expressing_in": 0.65,
+          "is_technical": false
+        },
+        {
+          "gene": "IGSF6",
+          "log2_fold_change": 2.797700178584595,
+          "statistic": 27563.5,
+          "p_value": 1.3073770213609246e-12,
+          "q_value": 7.34310093664386e-11,
+          "mean_in_group": 0.6121105909347534,
+          "mean_out_group": 0.09466684334641087,
+          "fraction_expressing_in": 0.6,
+          "is_technical": false
+        },
+        {
+          "gene": "GPX1",
+          "log2_fold_change": 2.5371726331147273,
+          "statistic": 33224.0,
+          "p_value": 1.6787330832773024e-12,
+          "q_value": 9.174049444288392e-11,
+          "mean_in_group": 1.86222984790802,
+          "mean_out_group": 0.48685049122813495,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "IL1B",
+          "log2_fold_change": 3.3860105553660973,
+          "statistic": 26153.0,
+          "p_value": 2.829944306656887e-12,
+          "q_value": 1.5058282600158488e-10,
+          "mean_in_group": 0.6054340183734894,
+          "mean_out_group": 0.07154827761623972,
+          "fraction_expressing_in": 0.5,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALS1",
+          "log2_fold_change": 2.299720589623776,
+          "statistic": 33606.0,
+          "p_value": 3.108593028967114e-12,
+          "q_value": 1.611685924249104e-10,
+          "mean_in_group": 2.6094037175178526,
+          "mean_out_group": 0.7878820335355803,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "FCGRT",
+          "log2_fold_change": 2.311674257863727,
+          "statistic": 30556.5,
+          "p_value": 4.264394721373625e-12,
+          "q_value": 2.1556515316543674e-10,
+          "mean_in_group": 0.9666144371032714,
+          "mean_out_group": 0.21616414858503644,
+          "fraction_expressing_in": 0.85,
+          "is_technical": false
+        },
+        {
+          "gene": "TNFAIP2",
+          "log2_fold_change": 2.3750394080597648,
+          "statistic": 25293.0,
+          "p_value": 7.971123204683705e-12,
+          "q_value": 3.931124663383037e-10,
+          "mean_in_group": 0.3321894884109497,
+          "mean_out_group": 0.05005056129488992,
+          "fraction_expressing_in": 0.45,
+          "is_technical": false
+        },
+        {
+          "gene": "DDAH2",
+          "log2_fold_change": 3.1156527873315567,
+          "statistic": 25375.0,
+          "p_value": 1.527421215881122e-11,
+          "q_value": 7.182431857003789e-10,
+          "mean_in_group": 0.4073933601379395,
+          "mean_out_group": 0.0511801147513165,
+          "fraction_expressing_in": 0.45,
+          "is_technical": false
+        },
+        {
+          "gene": "KLF4",
+          "log2_fold_change": 2.8121032352663318,
+          "statistic": 27428.0,
+          "p_value": 1.5182569584617332e-11,
+          "q_value": 7.182431857003789e-10,
+          "mean_in_group": 0.6212266683578491,
+          "mean_out_group": 0.10169144188587402,
+          "fraction_expressing_in": 0.6,
+          "is_technical": false
+        },
+        {
+          "gene": "RP4-561L24.3",
+          "log2_fold_change": 5.51254162934469,
+          "statistic": 19162.5,
+          "p_value": 2.4407642296756074e-11,
+          "q_value": 1.072875059218278e-09,
+          "mean_in_group": 0.03465735912322998,
+          "mean_out_group": 0.0006016496760691113,
+          "fraction_expressing_in": 0.05,
+          "is_technical": false
+        },
+        {
+          "gene": "RP11-10K16.1",
+          "log2_fold_change": 4.1906143300520995,
+          "statistic": 19162.5,
+          "p_value": 2.4407642296756074e-11,
+          "q_value": 1.072875059218278e-09,
+          "mean_in_group": 0.03465735912322998,
+          "mean_out_group": 0.0009812483521176325,
+          "fraction_expressing_in": 0.05,
+          "is_technical": false
+        },
+        {
+          "gene": "VIM",
+          "log2_fold_change": 2.2760287380223083,
+          "statistic": 33947.0,
+          "p_value": 2.359699697118573e-11,
+          "q_value": 1.072875059218278e-09,
+          "mean_in_group": 2.755988395214081,
+          "mean_out_group": 1.182792892918268,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "C15orf48",
+          "log2_fold_change": 5.927580023902974,
+          "statistic": 20029.0,
+          "p_value": 5.5210312694554423e-11,
+          "q_value": 2.3752181333699795e-09,
+          "mean_in_group": 0.10397207736968994,
+          "mean_out_group": 0.002277592056291127,
+          "fraction_expressing_in": 0.1,
+          "is_technical": false
+        },
+        {
+          "gene": "FCER1G",
+          "log2_fold_change": 1.5870709652879134,
+          "statistic": 31601.5,
+          "p_value": 5.717544028545443e-11,
+          "q_value": 2.408515422024768e-09,
+          "mean_in_group": 1.8461990237236023,
+          "mean_out_group": 0.5674487642233892,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "GSTP1",
+          "log2_fold_change": 2.3589814267774867,
+          "statistic": 32370.0,
+          "p_value": 7.41948609117364e-11,
+          "q_value": 3.0616736482353265e-09,
+          "mean_in_group": 1.7273757874965667,
+          "mean_out_group": 0.5229863152968792,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "TAF10",
+          "log2_fold_change": 2.2837243553701057,
+          "statistic": 23886.0,
+          "p_value": 8.049658142363894e-11,
+          "q_value": 3.2552817527719584e-09,
+          "mean_in_group": 0.26287477016448973,
+          "mean_out_group": 0.03260151736707573,
+          "fraction_expressing_in": 0.35,
+          "is_technical": false
+        }
+      ],
+      "FCGR3A+ Monocytes": [
+        {
+          "gene": "RP11-290F20.3",
+          "log2_fold_change": 4.563087118894449,
+          "statistic": 167118.5,
+          "p_value": 8.212606173690981e-131,
+          "q_value": 1.6605889683203163e-127,
+          "mean_in_group": 1.0282227021676522,
+          "mean_out_group": 0.060974389760486004,
+          "fraction_expressing_in": 0.8240740740740741,
+          "is_technical": false
+        },
+        {
+          "gene": "MS4A7",
+          "log2_fold_change": 4.58216396571127,
+          "statistic": 165155.0,
+          "p_value": 4.29729279964324e-121,
+          "q_value": 4.3445630204393156e-118,
+          "mean_in_group": 1.1489175491862826,
+          "mean_out_group": 0.06737234979284921,
+          "fraction_expressing_in": 0.7962962962962963,
+          "is_technical": false
+        },
+        {
+          "gene": "CKB",
+          "log2_fold_change": 6.657417478818277,
+          "statistic": 129872.0,
+          "p_value": 6.565050769665482e-121,
+          "q_value": 4.4248442187545355e-118,
+          "mean_in_group": 0.354922397269143,
+          "mean_out_group": 0.00422148271040483,
+          "fraction_expressing_in": 0.3888888888888889,
+          "is_technical": false
+        },
+        {
+          "gene": "FCGR3A",
+          "log2_fold_change": 4.863287666577789,
+          "statistic": 179071.5,
+          "p_value": 1.2444175022052638e-120,
+          "q_value": 6.2905304736476085e-118,
+          "mean_in_group": 2.023117361245332,
+          "mean_out_group": 0.14392530774082496,
+          "fraction_expressing_in": 0.9444444444444444,
+          "is_technical": false
+        },
+        {
+          "gene": "CDKN1C",
+          "log2_fold_change": 5.237143478449412,
+          "statistic": 135342.0,
+          "p_value": 2.2794097960262764e-120,
+          "q_value": 9.217933215130262e-118,
+          "mean_in_group": 0.4010850058661567,
+          "mean_out_group": 0.010399925969412466,
+          "fraction_expressing_in": 0.4537037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "HES4",
+          "log2_fold_change": 5.086327338083066,
+          "statistic": 141602.5,
+          "p_value": 7.432856587664434e-117,
+          "q_value": 2.5048726700429143e-114,
+          "mean_in_group": 0.4913258508399681,
+          "mean_out_group": 0.017119224930248547,
+          "fraction_expressing_in": 0.5277777777777778,
+          "is_technical": false
+        },
+        {
+          "gene": "PILRA",
+          "log2_fold_change": 4.054867421044326,
+          "statistic": 159834.0,
+          "p_value": 1.1734803949741788e-105,
+          "q_value": 3.3896819409111277e-103,
+          "mean_in_group": 0.8226824237240685,
+          "mean_out_group": 0.06471550697835872,
+          "fraction_expressing_in": 0.7592592592592593,
+          "is_technical": false
+        },
+        {
+          "gene": "LILRB1",
+          "log2_fold_change": 4.493751658109475,
+          "statistic": 141670.5,
+          "p_value": 6.063858075528841e-101,
+          "q_value": 1.5326401285899145e-98,
+          "mean_in_group": 0.4852319911674217,
+          "mean_out_group": 0.024365733764525523,
+          "fraction_expressing_in": 0.5370370370370371,
+          "is_technical": false
+        },
+        {
+          "gene": "IFITM3",
+          "log2_fold_change": 3.6907452066716644,
+          "statistic": 176126.0,
+          "p_value": 3.6913791972873066e-97,
+          "q_value": 8.29329859657215e-95,
+          "mean_in_group": 1.7768274656048528,
+          "mean_out_group": 0.21197499435982303,
+          "fraction_expressing_in": 0.9629629629629629,
+          "is_technical": false
+        },
+        {
+          "gene": "MS4A4A",
+          "log2_fold_change": 5.127623712577225,
+          "statistic": 129199.0,
+          "p_value": 2.948532944638971e-94,
+          "q_value": 5.96193361406e-92,
+          "mean_in_group": 0.34016601244608563,
+          "mean_out_group": 0.010332156654331572,
+          "fraction_expressing_in": 0.3888888888888889,
+          "is_technical": false
+        },
+        {
+          "gene": "CSF1R",
+          "log2_fold_change": 4.237806697204709,
+          "statistic": 143612.5,
+          "p_value": 6.336933990648035e-93,
+          "q_value": 1.164843684462757e-90,
+          "mean_in_group": 0.5305466298703794,
+          "mean_out_group": 0.03257540509670596,
+          "fraction_expressing_in": 0.5648148148148148,
+          "is_technical": false
+        },
+        {
+          "gene": "HMOX1",
+          "log2_fold_change": 4.610565333795175,
+          "statistic": 142158.0,
+          "p_value": 5.650011642116534e-92,
+          "q_value": 9.52026961696636e-90,
+          "mean_in_group": 0.5669714985070405,
+          "mean_out_group": 0.0306419324820006,
+          "fraction_expressing_in": 0.5462962962962963,
+          "is_technical": false
+        },
+        {
+          "gene": "CD68",
+          "log2_fold_change": 3.2100519196777855,
+          "statistic": 173789.5,
+          "p_value": 2.2168064789779535e-91,
+          "q_value": 3.447986692687248e-89,
+          "mean_in_group": 1.3914260974636785,
+          "mean_out_group": 0.19062964853126518,
+          "fraction_expressing_in": 0.9444444444444444,
+          "is_technical": false
+        },
+        {
+          "gene": "LRRC25",
+          "log2_fold_change": 4.082325446731504,
+          "statistic": 151637.0,
+          "p_value": 7.719422393100847e-91,
+          "q_value": 1.1149051484892794e-88,
+          "mean_in_group": 0.7107570270697275,
+          "mean_out_group": 0.05484214147297779,
+          "fraction_expressing_in": 0.6666666666666666,
+          "is_technical": false
+        },
+        {
+          "gene": "LILRA3",
+          "log2_fold_change": 4.4099418152683185,
+          "statistic": 139622.0,
+          "p_value": 1.8498189716807239e-90,
+          "q_value": 2.493555973825616e-88,
+          "mean_in_group": 0.5089551044834985,
+          "mean_out_group": 0.028316788624016133,
+          "fraction_expressing_in": 0.5185185185185185,
+          "is_technical": false
+        },
+        {
+          "gene": "SPI1",
+          "log2_fold_change": 3.2961271695199854,
+          "statistic": 170548.5,
+          "p_value": 1.0033108731014613e-87,
+          "q_value": 1.2679341158819717e-85,
+          "mean_in_group": 1.3418333530426025,
+          "mean_out_group": 0.17453373795411667,
+          "fraction_expressing_in": 0.8981481481481481,
+          "is_technical": false
+        },
+        {
+          "gene": "SERPINA1",
+          "log2_fold_change": 3.4993112079642845,
+          "statistic": 173627.0,
+          "p_value": 2.5994724684411822e-87,
+          "q_value": 3.0918431359929824e-85,
+          "mean_in_group": 1.5275872162094823,
+          "mean_out_group": 0.20068152795864058,
+          "fraction_expressing_in": 0.9351851851851852,
+          "is_technical": false
+        },
+        {
+          "gene": "CXCL16",
+          "log2_fold_change": 4.474892625399492,
+          "statistic": 134262.0,
+          "p_value": 9.998681540698021e-87,
+          "q_value": 1.123185226405078e-84,
+          "mean_in_group": 0.4065274750744855,
+          "mean_out_group": 0.020039347976754808,
+          "fraction_expressing_in": 0.4537037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "LST1",
+          "log2_fold_change": 3.8275355676256204,
+          "statistic": 184851.5,
+          "p_value": 1.6084167242269587e-86,
+          "q_value": 1.7116940086246899e-84,
+          "mean_in_group": 2.8204550036677607,
+          "mean_out_group": 0.4394551630810298,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "FCER1G",
+          "log2_fold_change": 3.704440949553356,
+          "statistic": 184119.5,
+          "p_value": 4.0309064587160206e-85,
+          "q_value": 4.0752464297618964e-83,
+          "mean_in_group": 2.7128281405678503,
+          "mean_out_group": 0.44884924324801656,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "RHOC",
+          "log2_fold_change": 3.827236814543952,
+          "statistic": 166727.0,
+          "p_value": 5.698190466867141e-85,
+          "q_value": 5.486543392383504e-83,
+          "mean_in_group": 1.1736924824891266,
+          "mean_out_group": 0.1292280833932418,
+          "fraction_expressing_in": 0.8518518518518519,
+          "is_technical": false
+        },
+        {
+          "gene": "AIF1",
+          "log2_fold_change": 3.41763250959314,
+          "statistic": 183315.0,
+          "p_value": 8.618459317324311e-82,
+          "q_value": 7.921147608922617e-80,
+          "mean_in_group": 2.7507832226929843,
+          "mean_out_group": 0.4857882507514076,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "LILRA5",
+          "log2_fold_change": 3.5158086041863745,
+          "statistic": 150021.0,
+          "p_value": 2.9662229156029274e-79,
+          "q_value": 2.6076968414561386e-77,
+          "mean_in_group": 0.6830083142828058,
+          "mean_out_group": 0.06933580855094111,
+          "fraction_expressing_in": 0.6666666666666666,
+          "is_technical": false
+        },
+        {
+          "gene": "SIGLEC10",
+          "log2_fold_change": 4.423362349369656,
+          "statistic": 135411.5,
+          "p_value": 1.29346681755178e-78,
+          "q_value": 1.0897457937873746e-76,
+          "mean_in_group": 0.4326513542069329,
+          "mean_out_group": 0.025261126947348084,
+          "fraction_expressing_in": 0.4722222222222222,
+          "is_technical": false
+        },
+        {
+          "gene": "CFD",
+          "log2_fold_change": 2.933092417934896,
+          "statistic": 168222.5,
+          "p_value": 2.0441209581207385e-76,
+          "q_value": 1.6532850309280533e-74,
+          "mean_in_group": 1.4102266861332788,
+          "mean_out_group": 0.22869247630221384,
+          "fraction_expressing_in": 0.9166666666666666,
+          "is_technical": false
+        },
+        {
+          "gene": "IFI30",
+          "log2_fold_change": 3.4178871903566383,
+          "statistic": 157617.5,
+          "p_value": 1.824670078371218e-75,
+          "q_value": 1.4190318840256164e-73,
+          "mean_in_group": 0.9614304856017784,
+          "mean_out_group": 0.11898376032178504,
+          "fraction_expressing_in": 0.7685185185185185,
+          "is_technical": false
+        },
+        {
+          "gene": "LILRB2",
+          "log2_fold_change": 3.492403995545387,
+          "statistic": 144189.5,
+          "p_value": 4.528654717654698e-74,
+          "q_value": 3.3914591996658514e-72,
+          "mean_in_group": 0.5524644410168683,
+          "mean_out_group": 0.05283898602146548,
+          "fraction_expressing_in": 0.5925925925925926,
+          "is_technical": false
+        },
+        {
+          "gene": "MAFB",
+          "log2_fold_change": 3.137835587461607,
+          "statistic": 144035.5,
+          "p_value": 3.3193661216496313e-71,
+          "q_value": 2.3970565349912695e-69,
+          "mean_in_group": 0.5327173471450806,
+          "mean_out_group": 0.06028421811322211,
+          "fraction_expressing_in": 0.6018518518518519,
+          "is_technical": false
+        },
+        {
+          "gene": "TIMP1",
+          "log2_fold_change": 3.371886142256532,
+          "statistic": 173785.0,
+          "p_value": 3.6038950144629645e-70,
+          "q_value": 2.5127847307738325e-68,
+          "mean_in_group": 1.6325618006564953,
+          "mean_out_group": 0.28542166708253747,
+          "fraction_expressing_in": 0.9537037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "STXBP2",
+          "log2_fold_change": 3.2832894877351984,
+          "statistic": 166230.0,
+          "p_value": 6.00780862940705e-70,
+          "q_value": 4.0492630162203516e-68,
+          "mean_in_group": 1.2065557583614632,
+          "mean_out_group": 0.18502090248880507,
+          "fraction_expressing_in": 0.8796296296296297,
+          "is_technical": false
+        },
+        {
+          "gene": "WARS",
+          "log2_fold_change": 3.554468115990655,
+          "statistic": 149160.0,
+          "p_value": 1.343685294034333e-68,
+          "q_value": 8.764295692056198e-67,
+          "mean_in_group": 0.6973867173548098,
+          "mean_out_group": 0.07929913248648165,
+          "fraction_expressing_in": 0.6666666666666666,
+          "is_technical": false
+        },
+        {
+          "gene": "CEBPB",
+          "log2_fold_change": 2.9804906694089963,
+          "statistic": 172211.0,
+          "p_value": 2.0341707280763943e-68,
+          "q_value": 1.2853416288032716e-66,
+          "mean_in_group": 1.469366153081258,
+          "mean_out_group": 0.2710490745285438,
+          "fraction_expressing_in": 0.9444444444444444,
+          "is_technical": false
+        },
+        {
+          "gene": "LYN",
+          "log2_fold_change": 3.173662578527813,
+          "statistic": 152857.5,
+          "p_value": 2.1971584382316223e-67,
+          "q_value": 1.3462588976073758e-65,
+          "mean_in_group": 0.7408548085777847,
+          "mean_out_group": 0.09442170017470698,
+          "fraction_expressing_in": 0.7129629629629629,
+          "is_technical": false
+        },
+        {
+          "gene": "CFP",
+          "log2_fold_change": 2.6546878991142555,
+          "statistic": 160039.5,
+          "p_value": 2.936155068453785e-67,
+          "q_value": 1.7461486907098687e-65,
+          "mean_in_group": 0.9971345320895866,
+          "mean_out_group": 0.17190454860825533,
+          "fraction_expressing_in": 0.8425925925925926,
+          "is_technical": false
+        },
+        {
+          "gene": "C5AR1",
+          "log2_fold_change": 2.9708501378001526,
+          "statistic": 141690.0,
+          "p_value": 3.999547719131895e-66,
+          "q_value": 2.3105958537384833e-64,
+          "mean_in_group": 0.5053570667902628,
+          "mean_out_group": 0.056928857972350304,
+          "fraction_expressing_in": 0.5740740740740741,
+          "is_technical": false
+        },
+        {
+          "gene": "VMO1",
+          "log2_fold_change": 7.866304624734435,
+          "statistic": 111131.0,
+          "p_value": 1.4149005621396432e-65,
+          "q_value": 7.773219295518459e-64,
+          "mean_in_group": 0.15996818189267759,
+          "mean_out_group": 0.0007976377243551204,
+          "fraction_expressing_in": 0.18518518518518517,
+          "is_technical": false
+        },
+        {
+          "gene": "ABI3",
+          "log2_fold_change": 3.3791625889761034,
+          "statistic": 154447.5,
+          "p_value": 1.4223991787051584e-65,
+          "q_value": 7.773219295518459e-64,
+          "mean_in_group": 0.8404854657473387,
+          "mean_out_group": 0.11331376855200535,
+          "fraction_expressing_in": 0.7407407407407407,
+          "is_technical": false
+        },
+        {
+          "gene": "TESC",
+          "log2_fold_change": 3.7282169369040195,
+          "statistic": 138691.5,
+          "p_value": 3.086694897459316e-65,
+          "q_value": 1.6424466007007202e-63,
+          "mean_in_group": 0.4958973328272502,
+          "mean_out_group": 0.04484103436574288,
+          "fraction_expressing_in": 0.5277777777777778,
+          "is_technical": false
+        },
+        {
+          "gene": "TPPP3",
+          "log2_fold_change": 4.10617215114161,
+          "statistic": 127906.5,
+          "p_value": 1.1192674387028418e-64,
+          "q_value": 5.80297118219781e-63,
+          "mean_in_group": 0.33108426023412635,
+          "mean_out_group": 0.021070279789739153,
+          "fraction_expressing_in": 0.3888888888888889,
+          "is_technical": false
+        },
+        {
+          "gene": "BID",
+          "log2_fold_change": 3.1617993262800144,
+          "statistic": 158361.5,
+          "p_value": 1.2029980142144382e-64,
+          "q_value": 6.081154961853985e-63,
+          "mean_in_group": 0.9216626385847727,
+          "mean_out_group": 0.13485493360921072,
+          "fraction_expressing_in": 0.7870370370370371,
+          "is_technical": false
+        },
+        {
+          "gene": "FGR",
+          "log2_fold_change": 2.959525549360153,
+          "statistic": 158492.5,
+          "p_value": 2.8722192742121175e-64,
+          "q_value": 1.4164944810870492e-62,
+          "mean_in_group": 0.8825842947871597,
+          "mean_out_group": 0.14830990641520406,
+          "fraction_expressing_in": 0.8148148148148148,
+          "is_technical": false
+        },
+        {
+          "gene": "FAM110A",
+          "log2_fold_change": 3.8047914543322094,
+          "statistic": 136523.0,
+          "p_value": 3.1679032718198674e-64,
+          "q_value": 1.4896512594464584e-62,
+          "mean_in_group": 0.4758156184796934,
+          "mean_out_group": 0.0401158297157946,
+          "fraction_expressing_in": 0.5,
+          "is_technical": false
+        },
+        {
+          "gene": "COTL1",
+          "log2_fold_change": 3.00558768339563,
+          "statistic": 181786.0,
+          "p_value": 3.128161195695273e-64,
+          "q_value": 1.4896512594464584e-62,
+          "mean_in_group": 2.762324655497516,
+          "mean_out_group": 0.7577549437247431,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "IFITM2",
+          "log2_fold_change": 2.8710190509399167,
+          "statistic": 181645.0,
+          "p_value": 4.5461614309127836e-63,
+          "q_value": 2.0891678212058294e-61,
+          "mean_in_group": 2.4342377020253076,
+          "mean_out_group": 0.7650021460717512,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "SLC31A2",
+          "log2_fold_change": 3.790968062037985,
+          "statistic": 139433.0,
+          "p_value": 6.553971008053835e-63,
+          "q_value": 2.9449176396188568e-61,
+          "mean_in_group": 0.49030904637442696,
+          "mean_out_group": 0.05188488466418654,
+          "fraction_expressing_in": 0.5462962962962963,
+          "is_technical": false
+        },
+        {
+          "gene": "SAT1",
+          "log2_fold_change": 2.982177672402771,
+          "statistic": 179363.0,
+          "p_value": 8.164223984771898e-62,
+          "q_value": 3.5887088906975603e-60,
+          "mean_in_group": 2.6433584966041423,
+          "mean_out_group": 0.7056670136775466,
+          "fraction_expressing_in": 0.9907407407407407,
+          "is_technical": false
+        },
+        {
+          "gene": "TYROBP",
+          "log2_fold_change": 2.378597343666513,
+          "statistic": 172952.5,
+          "p_value": 1.0217825881073819e-61,
+          "q_value": 4.395839134368354e-60,
+          "mean_in_group": 2.660444727650395,
+          "mean_out_group": 0.6729700113330529,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "S100A11",
+          "log2_fold_change": 2.658180245321442,
+          "statistic": 177492.5,
+          "p_value": 1.195077382894013e-61,
+          "q_value": 5.034263475441029e-60,
+          "mean_in_group": 2.2249404313387693,
+          "mean_out_group": 0.6001874947849708,
+          "fraction_expressing_in": 0.9907407407407407,
+          "is_technical": false
+        },
+        {
+          "gene": "CTSS",
+          "log2_fold_change": 2.878680623980298,
+          "statistic": 177315.5,
+          "p_value": 2.2293869282297033e-61,
+          "q_value": 9.199633405878491e-60,
+          "mean_in_group": 2.3433187548761016,
+          "mean_out_group": 0.5933941287193254,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "PSAP",
+          "log2_fold_change": 2.6722556226746055,
+          "statistic": 176288.5,
+          "p_value": 2.3580255228486066e-60,
+          "q_value": 9.535855214399765e-59,
+          "mean_in_group": 2.1250482587902635,
+          "mean_out_group": 0.552181551247938,
+          "fraction_expressing_in": 0.9907407407407407,
+          "is_technical": false
+        }
+      ],
+      "Megakaryocytes": [
+        {
+          "gene": "GP9",
+          "log2_fold_change": 11.511414412901408,
+          "statistic": 18346.0,
+          "p_value": 2.8586034152074737e-270,
+          "q_value": 5.780096105549512e-267,
+          "mean_in_group": 1.113599257035689,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.8181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "ITGA2B",
+          "log2_fold_change": 10.774448858998895,
+          "statistic": 17426.5,
+          "p_value": 6.765924752582452e-235,
+          "q_value": 6.101544722521272e-232,
+          "mean_in_group": 0.8704530542547052,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.7272727272727273,
+          "is_technical": false
+        },
+        {
+          "gene": "AP001189.4",
+          "log2_fold_change": 10.082571151293541,
+          "statistic": 17424.5,
+          "p_value": 9.052736977034528e-235,
+          "q_value": 6.101544722521272e-232,
+          "mean_in_group": 0.6611271338029341,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.7272727272727273,
+          "is_technical": false
+        },
+        {
+          "gene": "TMEM40",
+          "log2_fold_change": 11.119097500728376,
+          "statistic": 17422.0,
+          "p_value": 1.3708033176514575e-213,
+          "q_value": 6.929410770728117e-211,
+          "mean_in_group": 0.9500411207025702,
+          "mean_out_group": 0.0011332106525306805,
+          "fraction_expressing_in": 0.7272727272727273,
+          "is_technical": false
+        },
+        {
+          "gene": "SEPT5",
+          "log2_fold_change": 11.289020695219158,
+          "statistic": 15594.0,
+          "p_value": 6.358601026206572e-189,
+          "q_value": 2.571418254997938e-186,
+          "mean_in_group": 0.61468843980269,
+          "mean_out_group": 0.00037773688417689353,
+          "fraction_expressing_in": 0.5454545454545454,
+          "is_technical": false
+        },
+        {
+          "gene": "LY6G6F",
+          "log2_fold_change": 29.437921252871835,
+          "statistic": 14680.0,
+          "p_value": 9.251930325460525e-184,
+          "q_value": 3.1179005196801966e-181,
+          "mean_in_group": 0.41494074734774505,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.45454545454545453,
+          "is_technical": false
+        },
+        {
+          "gene": "TREML1",
+          "log2_fold_change": 9.704060298933996,
+          "statistic": 16504.0,
+          "p_value": 6.403842501251335e-164,
+          "q_value": 1.8497956482186e-161,
+          "mean_in_group": 0.9131806546991522,
+          "mean_out_group": 0.001731909458253949,
+          "fraction_expressing_in": 0.6363636363636364,
+          "is_technical": false
+        },
+        {
+          "gene": "PF4",
+          "log2_fold_change": 10.045097646840823,
+          "statistic": 20182.5,
+          "p_value": 1.2832875530914504e-155,
+          "q_value": 3.243509290438641e-153,
+          "mean_in_group": 2.54225107756528,
+          "mean_out_group": 0.007961490693469138,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "RP11-879F14.2",
+          "log2_fold_change": 29.022883769161492,
+          "statistic": 13762.5,
+          "p_value": 2.489666156924917e-147,
+          "q_value": 5.593449965891313e-145,
+          "mean_in_group": 0.32577445290305396,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.36363636363636365,
+          "is_technical": false
+        },
+        {
+          "gene": "CMTM5",
+          "log2_fold_change": 9.797169380982314,
+          "statistic": 15588.5,
+          "p_value": 2.9132054651083635e-147,
+          "q_value": 5.8905014504491115e-145,
+          "mean_in_group": 0.6814129135825417,
+          "mean_out_group": 0.0011332106525306805,
+          "fraction_expressing_in": 0.5454545454545454,
+          "is_technical": false
+        },
+        {
+          "gene": "PTCRA",
+          "log2_fold_change": 10.256601422827849,
+          "statistic": 16494.0,
+          "p_value": 9.800790101096833e-139,
+          "q_value": 1.801563416765254e-136,
+          "mean_in_group": 0.8966059684753418,
+          "mean_out_group": 0.002266421305061361,
+          "fraction_expressing_in": 0.6363636363636364,
+          "is_technical": false
+        },
+        {
+          "gene": "SDPR",
+          "log2_fold_change": 9.580912535445156,
+          "statistic": 19253.5,
+          "p_value": 7.257975181833076e-138,
+          "q_value": 1.2229688181388733e-135,
+          "mean_in_group": 1.8629194389690051,
+          "mean_out_group": 0.007462149679823208,
+          "fraction_expressing_in": 0.9090909090909091,
+          "is_technical": false
+        },
+        {
+          "gene": "C2orf88",
+          "log2_fold_change": 12.189486239913881,
+          "statistic": 14670.0,
+          "p_value": 2.059449088586167e-131,
+          "q_value": 3.203235428554792e-129,
+          "mean_in_group": 0.6129891438917681,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.45454545454545453,
+          "is_technical": false
+        },
+        {
+          "gene": "SPARC",
+          "log2_fold_change": 8.201560352196744,
+          "statistic": 18323.0,
+          "p_value": 1.8529794673873034e-130,
+          "q_value": 2.676231773612234e-128,
+          "mean_in_group": 1.1236358989368787,
+          "mean_out_group": 0.00578765739212244,
+          "fraction_expressing_in": 0.8181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "CLDN5",
+          "log2_fold_change": 11.774447569369965,
+          "statistic": 13759.0,
+          "p_value": 4.185860668320967e-118,
+          "q_value": 5.642540180896664e-116,
+          "mean_in_group": 0.6366423260081898,
+          "mean_out_group": 0.00037773688417689353,
+          "fraction_expressing_in": 0.36363636363636365,
+          "is_technical": false
+        },
+        {
+          "gene": "MYL9",
+          "log2_fold_change": 8.735769431174967,
+          "statistic": 16488.0,
+          "p_value": 4.560609263116352e-113,
+          "q_value": 5.76346995626329e-111,
+          "mean_in_group": 0.8443001400340687,
+          "mean_out_group": 0.003399631957592042,
+          "fraction_expressing_in": 0.6363636363636364,
+          "is_technical": false
+        },
+        {
+          "gene": "GATA2",
+          "log2_fold_change": 29.022883776699427,
+          "statistic": 12845.0,
+          "p_value": 6.317849590368016e-111,
+          "q_value": 7.097051039846738e-109,
+          "mean_in_group": 0.2723393006758256,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.2727272727272727,
+          "is_technical": false
+        },
+        {
+          "gene": "ATP9A",
+          "log2_fold_change": 28.437921263525116,
+          "statistic": 12845.0,
+          "p_value": 6.317849590368016e-111,
+          "q_value": 7.097051039846738e-109,
+          "mean_in_group": 0.2259006066755815,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.2727272727272727,
+          "is_technical": false
+        },
+        {
+          "gene": "GNG11",
+          "log2_fold_change": 9.180498793695683,
+          "statistic": 18328.0,
+          "p_value": 5.653854517827333e-101,
+          "q_value": 6.01689149212993e-99,
+          "mean_in_group": 1.772248929197138,
+          "mean_out_group": 0.008374398410807513,
+          "fraction_expressing_in": 0.8181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "ESAM",
+          "log2_fold_change": 10.552056412935505,
+          "statistic": 13752.5,
+          "p_value": 1.866337955594877e-98,
+          "q_value": 1.886867673106421e-96,
+          "mean_in_group": 0.4410936615683816,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.36363636363636365,
+          "is_technical": false
+        },
+        {
+          "gene": "AC147651.3",
+          "log2_fold_change": 9.308131623932944,
+          "statistic": 14655.0,
+          "p_value": 3.9546624600038985e-92,
+          "q_value": 3.8077749972037535e-90,
+          "mean_in_group": 0.504107041792436,
+          "mean_out_group": 0.0018886844208844675,
+          "fraction_expressing_in": 0.45454545454545453,
+          "is_technical": false
+        },
+        {
+          "gene": "ACRBP",
+          "log2_fold_change": 9.203162506429448,
+          "statistic": 16457.0,
+          "p_value": 5.121544554243076e-86,
+          "q_value": 4.707165040308864e-84,
+          "mean_in_group": 0.8807556629180908,
+          "mean_out_group": 0.005509278300022884,
+          "fraction_expressing_in": 0.6363636363636364,
+          "is_technical": false
+        },
+        {
+          "gene": "CLU",
+          "log2_fold_change": 9.014400848663806,
+          "statistic": 17392.5,
+          "p_value": 3.237554096318703e-85,
+          "q_value": 2.846232340328877e-83,
+          "mean_in_group": 1.4387028000571511,
+          "mean_out_group": 0.00755473768353787,
+          "fraction_expressing_in": 0.7272727272727273,
+          "is_technical": false
+        },
+        {
+          "gene": "C19orf33",
+          "log2_fold_change": 9.1190974734383,
+          "statistic": 13750.5,
+          "p_value": 1.2824890615619891e-84,
+          "q_value": 1.080497034365976e-82,
+          "mean_in_group": 0.42564829913052643,
+          "mean_out_group": 0.0011332106525306805,
+          "fraction_expressing_in": 0.36363636363636365,
+          "is_technical": false
+        },
+        {
+          "gene": "PPBP",
+          "log2_fold_change": 10.397399392377272,
+          "statistic": 20185.0,
+          "p_value": 3.459570466019846e-84,
+          "q_value": 2.7981005929168513e-82,
+          "mean_in_group": 3.4792999137531626,
+          "mean_out_group": 0.01728330866842244,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "SPOCD1",
+          "log2_fold_change": 29.437921181301046,
+          "statistic": 11927.5,
+          "p_value": 1.5524804259820763e-74,
+          "q_value": 1.162635341235466e-72,
+          "mean_in_group": 0.2767747640609741,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "LCN2",
+          "log2_fold_change": 28.437921246185965,
+          "statistic": 11927.5,
+          "p_value": 1.5524804259820763e-74,
+          "q_value": 1.162635341235466e-72,
+          "mean_in_group": 0.18904014067216354,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "CLEC1B",
+          "log2_fold_change": 8.84156369663986,
+          "statistic": 13744.5,
+          "p_value": 4.4446480502161204e-74,
+          "q_value": 3.209670841977498e-72,
+          "mean_in_group": 0.41494074734774505,
+          "mean_out_group": 0.0015109475367075741,
+          "fraction_expressing_in": 0.36363636363636365,
+          "is_technical": false
+        },
+        {
+          "gene": "F13A1",
+          "log2_fold_change": 6.797170111021641,
+          "statistic": 16435.0,
+          "p_value": 1.4935255208859786e-69,
+          "q_value": 1.0413477942177409e-67,
+          "mean_in_group": 0.6504195820201527,
+          "mean_out_group": 0.0076189246424537265,
+          "fraction_expressing_in": 0.6363636363636364,
+          "is_technical": false
+        },
+        {
+          "gene": "PCP2",
+          "log2_fold_change": 8.96709394127598,
+          "statistic": 12835.0,
+          "p_value": 6.539367653552188e-67,
+          "q_value": 4.407533798494175e-65,
+          "mean_in_group": 0.2723393006758256,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.2727272727272727,
+          "is_technical": false
+        },
+        {
+          "gene": "TUBB1",
+          "log2_fold_change": 8.382132671792576,
+          "statistic": 17385.5,
+          "p_value": 5.932295998080321e-62,
+          "q_value": 3.869387905844648e-60,
+          "mean_in_group": 1.4429803002964368,
+          "mean_out_group": 0.011930805331030074,
+          "fraction_expressing_in": 0.7272727272727273,
+          "is_technical": false
+        },
+        {
+          "gene": "NRGN",
+          "log2_fold_change": 6.887367963113042,
+          "statistic": 19144.0,
+          "p_value": 6.286527791608095e-60,
+          "q_value": 3.9722997483223655e-58,
+          "mean_in_group": 1.2865979021245784,
+          "mean_out_group": 0.02178098044538368,
+          "fraction_expressing_in": 0.9090909090909091,
+          "is_technical": false
+        },
+        {
+          "gene": "CA2",
+          "log2_fold_change": 7.4890478718476885,
+          "statistic": 16440.0,
+          "p_value": 7.0921565897561155e-59,
+          "q_value": 4.34555776499602e-57,
+          "mean_in_group": 0.8704530542547052,
+          "mean_out_group": 0.009507609063338194,
+          "fraction_expressing_in": 0.6363636363636364,
+          "is_technical": false
+        },
+        {
+          "gene": "RGS18",
+          "log2_fold_change": 6.159740317887494,
+          "statistic": 19045.0,
+          "p_value": 1.1548713954972955e-58,
+          "q_value": 6.868088122633917e-57,
+          "mean_in_group": 0.9640548229217529,
+          "mean_out_group": 0.02216548711792325,
+          "fraction_expressing_in": 0.9090909090909091,
+          "is_technical": false
+        },
+        {
+          "gene": "CD9",
+          "log2_fold_change": 6.6451670998119665,
+          "statistic": 18269.0,
+          "p_value": 1.605913897385763e-51,
+          "q_value": 9.277594001468608e-50,
+          "mean_in_group": 1.2769656723195857,
+          "mean_out_group": 0.02112486446910723,
+          "fraction_expressing_in": 0.8181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "TUBA8",
+          "log2_fold_change": 9.382130087091646,
+          "statistic": 11922.5,
+          "p_value": 4.631169629935644e-50,
+          "q_value": 2.4642697346657556e-48,
+          "mean_in_group": 0.18904014067216354,
+          "mean_out_group": 0.00037773688417689353,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "SERPINE1",
+          "log2_fold_change": 8.967092612712115,
+          "statistic": 11922.5,
+          "p_value": 4.631169629935644e-50,
+          "q_value": 2.4642697346657556e-48,
+          "mean_in_group": 0.16288722645152698,
+          "mean_out_group": 0.00037773688417689353,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "AC137932.6",
+          "log2_fold_change": 8.967092612712115,
+          "statistic": 11922.5,
+          "p_value": 4.631169629935644e-50,
+          "q_value": 2.4642697346657556e-48,
+          "mean_in_group": 0.16288722645152698,
+          "mean_out_group": 0.00037773688417689353,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "HIST1H2AC",
+          "log2_fold_change": 7.83781215551514,
+          "statistic": 18245.0,
+          "p_value": 2.9069365942524633e-43,
+          "q_value": 1.507134818866277e-41,
+          "mean_in_group": 1.4379420388828625,
+          "mean_out_group": 0.02527997019505306,
+          "fraction_expressing_in": 0.8181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "TAL1",
+          "log2_fold_change": 27.437921286205597,
+          "statistic": 11010.0,
+          "p_value": 4.0165159281938444e-38,
+          "q_value": 2.0303488017019882e-36,
+          "mean_in_group": 0.09987384622747247,
+          "mean_out_group": 0.0,
+          "fraction_expressing_in": 0.09090909090909091,
+          "is_technical": false
+        },
+        {
+          "gene": "LGALSL",
+          "log2_fold_change": 9.38213141083969,
+          "statistic": 11917.5,
+          "p_value": 8.343238977641444e-38,
+          "q_value": 3.9232626076258136e-36,
+          "mean_in_group": 0.252053520896218,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "AATK",
+          "log2_fold_change": 8.967093935569936,
+          "statistic": 11917.5,
+          "p_value": 8.343238977641444e-38,
+          "q_value": 3.9232626076258136e-36,
+          "mean_in_group": 0.2259006066755815,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "TNS1",
+          "log2_fold_change": 8.382131410762518,
+          "statistic": 11917.5,
+          "p_value": 8.343238977641444e-38,
+          "q_value": 3.9232626076258136e-36,
+          "mean_in_group": 0.18904014067216354,
+          "mean_out_group": 0.0007554737683537871,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "SMIM5",
+          "log2_fold_change": 8.119097458020908,
+          "statistic": 11917.0,
+          "p_value": 8.732230335190882e-38,
+          "q_value": 4.012856758580901e-36,
+          "mean_in_group": 0.20932592045177112,
+          "mean_out_group": 0.0009764356899001617,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "RUFY1",
+          "log2_fold_change": 5.899350663691095,
+          "statistic": 19046.5,
+          "p_value": 2.110150778677593e-34,
+          "q_value": 9.481610832191318e-33,
+          "mean_in_group": 1.1696696498177268,
+          "mean_out_group": 0.04023267059949828,
+          "fraction_expressing_in": 0.9090909090909091,
+          "is_technical": false
+        },
+        {
+          "gene": "HIST1H2BJ",
+          "log2_fold_change": 7.7040605417591035,
+          "statistic": 12805.0,
+          "p_value": 8.08341328981459e-31,
+          "q_value": 3.5531873200011085e-29,
+          "mean_in_group": 0.32577445290305396,
+          "mean_out_group": 0.0030218950734151482,
+          "fraction_expressing_in": 0.2727272727272727,
+          "is_technical": false
+        },
+        {
+          "gene": "ENKUR",
+          "log2_fold_change": 8.382131876072675,
+          "statistic": 11912.5,
+          "p_value": 1.9301322280549735e-30,
+          "q_value": 8.130682010681576e-29,
+          "mean_in_group": 0.2259006066755815,
+          "mean_out_group": 0.0011332106525306805,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "hsa-mir-1199",
+          "log2_fold_change": 8.119097482971652,
+          "statistic": 11912.5,
+          "p_value": 1.9301322280549735e-30,
+          "q_value": 8.130682010681576e-29,
+          "mean_in_group": 0.20932592045177112,
+          "mean_out_group": 0.0011332106525306805,
+          "fraction_expressing_in": 0.18181818181818182,
+          "is_technical": false
+        },
+        {
+          "gene": "MMD",
+          "log2_fold_change": 7.382132705985254,
+          "statistic": 14563.0,
+          "p_value": 4.44959752532783e-30,
+          "q_value": 1.8361400400434433e-28,
+          "mean_in_group": 0.569917852228338,
+          "mean_out_group": 0.009821158988599232,
+          "fraction_expressing_in": 0.45454545454545453,
+          "is_technical": false
+        },
+        {
+          "gene": "TSPAN33",
+          "log2_fold_change": 6.645166897840965,
+          "statistic": 12799.0,
+          "p_value": 2.7584408194239114e-28,
+          "q_value": 1.1155134673750298e-26,
+          "mean_in_group": 0.2723393006758256,
+          "mean_out_group": 0.0036205938791384162,
+          "fraction_expressing_in": 0.2727272727272727,
+          "is_technical": false
+        }
+      ],
+      "NK cells": [
+        {
+          "gene": "GZMB",
+          "log2_fold_change": 6.061365821306847,
+          "statistic": 182216.0,
+          "p_value": 1.953547848734835e-195,
+          "q_value": 3.950073750141836e-192,
+          "mean_in_group": 2.128024239231039,
+          "mean_out_group": 0.06200938099958817,
+          "fraction_expressing_in": 0.9537037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "FGFBP2",
+          "log2_fold_change": 5.310887608798397,
+          "statistic": 174921.0,
+          "p_value": 4.308906401539769e-175,
+          "q_value": 4.3563043719567067e-172,
+          "mean_in_group": 1.439487545578568,
+          "mean_out_group": 0.056259027216047634,
+          "fraction_expressing_in": 0.8888888888888888,
+          "is_technical": false
+        },
+        {
+          "gene": "SPON2",
+          "log2_fold_change": 5.363419807131668,
+          "statistic": 160343.5,
+          "p_value": 2.5138793403829095e-150,
+          "q_value": 1.694354675418081e-147,
+          "mean_in_group": 0.8968490869910629,
+          "mean_out_group": 0.03131117919509238,
+          "fraction_expressing_in": 0.7314814814814815,
+          "is_technical": false
+        },
+        {
+          "gene": "PRF1",
+          "log2_fold_change": 4.889945430399183,
+          "statistic": 180497.5,
+          "p_value": 2.5160978398221116e-144,
+          "q_value": 1.2718874580300775e-141,
+          "mean_in_group": 1.6209673738038097,
+          "mean_out_group": 0.0918573255643197,
+          "fraction_expressing_in": 0.9537037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "GNLY",
+          "log2_fold_change": 5.982550837309246,
+          "statistic": 179886.0,
+          "p_value": 3.974404908527695e-127,
+          "q_value": 1.6072493450085995e-124,
+          "mean_in_group": 2.7293759573388985,
+          "mean_out_group": 0.12840331197470872,
+          "fraction_expressing_in": 0.9351851851851852,
+          "is_technical": false
+        },
+        {
+          "gene": "XCL2",
+          "log2_fold_change": 5.24354130716583,
+          "statistic": 143429.5,
+          "p_value": 4.936706245308733e-127,
+          "q_value": 1.6636700046690428e-124,
+          "mean_in_group": 0.5236355949331213,
+          "mean_out_group": 0.016741331002243096,
+          "fraction_expressing_in": 0.5462962962962963,
+          "is_technical": false
+        },
+        {
+          "gene": "AKR1C3",
+          "log2_fold_change": 5.842314813194413,
+          "statistic": 135454.5,
+          "p_value": 1.1307918465632334e-122,
+          "q_value": 3.266373019644083e-120,
+          "mean_in_group": 0.4148966250596223,
+          "mean_out_group": 0.008676259509438887,
+          "fraction_expressing_in": 0.4537037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "CST7",
+          "log2_fold_change": 3.902530220488563,
+          "statistic": 179832.5,
+          "p_value": 5.615518336485631e-119,
+          "q_value": 1.4193222595467434e-116,
+          "mean_in_group": 1.5873710678683386,
+          "mean_out_group": 0.15442938874588188,
+          "fraction_expressing_in": 0.9814814814814815,
+          "is_technical": false
+        },
+        {
+          "gene": "CLIC3",
+          "log2_fold_change": 5.49184207193426,
+          "statistic": 144195.0,
+          "p_value": 2.362709661750304e-117,
+          "q_value": 5.308221040065683e-115,
+          "mean_in_group": 0.6324179260819046,
+          "mean_out_group": 0.020543069916298257,
+          "fraction_expressing_in": 0.5555555555555556,
+          "is_technical": false
+        },
+        {
+          "gene": "PRSS23",
+          "log2_fold_change": 5.172711604815896,
+          "statistic": 135114.5,
+          "p_value": 1.395797640449794e-111,
+          "q_value": 2.8223028289894833e-109,
+          "mean_in_group": 0.3686168767787792,
+          "mean_out_group": 0.011069172682504248,
+          "fraction_expressing_in": 0.4537037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "GZMA",
+          "log2_fold_change": 3.8390048952177036,
+          "statistic": 176075.5,
+          "p_value": 2.6511174366785456e-104,
+          "q_value": 4.87323586996729e-102,
+          "mean_in_group": 1.5951167013910081,
+          "mean_out_group": 0.16587785006392536,
+          "fraction_expressing_in": 0.9351851851851852,
+          "is_technical": false
+        },
+        {
+          "gene": "KLRD1",
+          "log2_fold_change": 4.49375166100079,
+          "statistic": 140050.0,
+          "p_value": 3.7388139384010875e-99,
+          "q_value": 6.299901486205833e-97,
+          "mean_in_group": 0.45570099353790283,
+          "mean_out_group": 0.02260493354226695,
+          "fraction_expressing_in": 0.5185185185185185,
+          "is_technical": false
+        },
+        {
+          "gene": "NKG7",
+          "log2_fold_change": 4.081091328265557,
+          "statistic": 184446.0,
+          "p_value": 4.281297637277897e-96,
+          "q_value": 6.659064478904545e-94,
+          "mean_in_group": 3.069927272973237,
+          "mean_out_group": 0.3588933627130796,
+          "fraction_expressing_in": 1.0,
+          "is_technical": false
+        },
+        {
+          "gene": "CCL4",
+          "log2_fold_change": 4.804791477346246,
+          "statistic": 155439.5,
+          "p_value": 2.364878464588528e-93,
+          "q_value": 3.415560182427145e-91,
+          "mean_in_group": 1.004842119084464,
+          "mean_out_group": 0.07428079294801719,
+          "fraction_expressing_in": 0.7129629629629629,
+          "is_technical": false
+        },
+        {
+          "gene": "XCL1",
+          "log2_fold_change": 4.9576986966889045,
+          "statistic": 126574.5,
+          "p_value": 4.655002544053669e-86,
+          "q_value": 6.274943429384345e-84,
+          "mean_in_group": 0.3010190118242193,
+          "mean_out_group": 0.010166631880783239,
+          "fraction_expressing_in": 0.3611111111111111,
+          "is_technical": false
+        },
+        {
+          "gene": "CTSW",
+          "log2_fold_change": 3.2142209683672025,
+          "statistic": 176609.5,
+          "p_value": 3.5963179085395865e-81,
+          "q_value": 4.544846756916903e-79,
+          "mean_in_group": 1.5759024609018255,
+          "mean_out_group": 0.24615716069971047,
+          "fraction_expressing_in": 0.9722222222222222,
+          "is_technical": false
+        },
+        {
+          "gene": "GZMH",
+          "log2_fold_change": 3.1361384835443453,
+          "statistic": 146444.0,
+          "p_value": 1.994099489599208e-79,
+          "q_value": 2.3718053929232932e-77,
+          "mean_in_group": 0.8146128797972644,
+          "mean_out_group": 0.09039097798021534,
+          "fraction_expressing_in": 0.6296296296296297,
+          "is_technical": false
+        },
+        {
+          "gene": "FCGR3A",
+          "log2_fold_change": 1.955454959476843,
+          "statistic": 162668.0,
+          "p_value": 2.4802479812293333e-79,
+          "q_value": 2.7861452322476176e-77,
+          "mean_in_group": 1.1281428778613056,
+          "mean_out_group": 0.19953937230093707,
+          "fraction_expressing_in": 0.8703703703703703,
+          "is_technical": false
+        },
+        {
+          "gene": "TTC38",
+          "log2_fold_change": 4.3131794076005585,
+          "statistic": 130750.0,
+          "p_value": 1.3141985052151683e-75,
+          "q_value": 1.398583882918458e-73,
+          "mean_in_group": 0.35142893261379665,
+          "mean_out_group": 0.019173940937318792,
+          "fraction_expressing_in": 0.4166666666666667,
+          "is_technical": false
+        },
+        {
+          "gene": "S1PR5",
+          "log2_fold_change": 4.345359800844885,
+          "statistic": 125072.0,
+          "p_value": 1.6711725216539746e-65,
+          "q_value": 1.6895554193921684e-63,
+          "mean_in_group": 0.2814281869817663,
+          "mean_out_group": 0.014824067215650622,
+          "fraction_expressing_in": 0.35185185185185186,
+          "is_technical": false
+        },
+        {
+          "gene": "GPR56",
+          "log2_fold_change": 4.178249812335548,
+          "statistic": 123511.5,
+          "p_value": 4.713767116524484e-65,
+          "q_value": 4.538684337910717e-63,
+          "mean_in_group": 0.26374723734679045,
+          "mean_out_group": 0.01386090471774717,
+          "fraction_expressing_in": 0.3333333333333333,
+          "is_technical": false
+        },
+        {
+          "gene": "IGFBP7",
+          "log2_fold_change": 4.4771687526794235,
+          "statistic": 138098.5,
+          "p_value": 3.3083911574420906e-63,
+          "q_value": 3.040712236521776e-61,
+          "mean_in_group": 0.5823447417329859,
+          "mean_out_group": 0.04657184844461491,
+          "fraction_expressing_in": 0.5185185185185185,
+          "is_technical": false
+        },
+        {
+          "gene": "HAVCR2",
+          "log2_fold_change": 4.370894897574035,
+          "statistic": 126171.0,
+          "p_value": 4.87230547810918e-59,
+          "q_value": 4.2833920333638094e-57,
+          "mean_in_group": 0.33419974313841927,
+          "mean_out_group": 0.021107413552024147,
+          "fraction_expressing_in": 0.37037037037037035,
+          "is_technical": false
+        },
+        {
+          "gene": "APMAP",
+          "log2_fold_change": 2.9078646946069973,
+          "statistic": 142678.0,
+          "p_value": 1.2776971476585448e-55,
+          "q_value": 1.0764598469023238e-53,
+          "mean_in_group": 0.5460464115496035,
+          "mean_out_group": 0.07557105071525443,
+          "fraction_expressing_in": 0.6018518518518519,
+          "is_technical": false
+        },
+        {
+          "gene": "CD160",
+          "log2_fold_change": 4.608717335319478,
+          "statistic": 116967.5,
+          "p_value": 7.91001117616351e-52,
+          "q_value": 6.397617039281047e-50,
+          "mean_in_group": 0.23469879450621428,
+          "mean_out_group": 0.010903647908955915,
+          "fraction_expressing_in": 0.25925925925925924,
+          "is_technical": false
+        },
+        {
+          "gene": "FCRL6",
+          "log2_fold_change": 3.370894899483196,
+          "statistic": 119416.0,
+          "p_value": 3.0662210918811296e-46,
+          "q_value": 2.384576556839863e-44,
+          "mean_in_group": 0.22039416984275537,
+          "mean_out_group": 0.019248857871298135,
+          "fraction_expressing_in": 0.2962962962962963,
+          "is_technical": false
+        },
+        {
+          "gene": "PTGDR",
+          "log2_fold_change": 4.624996116948105,
+          "statistic": 122238.0,
+          "p_value": 1.3656023750697987e-44,
+          "q_value": 1.0226844453300492e-42,
+          "mean_in_group": 0.2837424609396193,
+          "mean_out_group": 0.02326703263646028,
+          "fraction_expressing_in": 0.3333333333333333,
+          "is_technical": false
+        },
+        {
+          "gene": "KLRC1",
+          "log2_fold_change": 4.95585728549238,
+          "statistic": 110518.0,
+          "p_value": 1.941675913520283e-40,
+          "q_value": 1.4021673918350043e-38,
+          "mean_in_group": 0.15355015242541278,
+          "mean_out_group": 0.005583464070485843,
+          "fraction_expressing_in": 0.18518518518518517,
+          "is_technical": false
+        },
+        {
+          "gene": "NCR3",
+          "log2_fold_change": 2.7938811928500966,
+          "statistic": 131009.0,
+          "p_value": 7.322870830887785e-40,
+          "q_value": 5.10580855863969e-38,
+          "mean_in_group": 0.4052288090741193,
+          "mean_out_group": 0.06361680585029347,
+          "fraction_expressing_in": 0.4722222222222222,
+          "is_technical": false
+        },
+        {
+          "gene": "HBA1",
+          "log2_fold_change": 6.928890155380278,
+          "statistic": 104171.5,
+          "p_value": 2.2294480285626142e-37,
+          "q_value": 1.502647971251202e-35,
+          "mean_in_group": 0.14214141390941762,
+          "mean_out_group": 0.0015184449244149123,
+          "fraction_expressing_in": 0.1111111111111111,
+          "is_technical": true
+        },
+        {
+          "gene": "CTSC",
+          "log2_fold_change": 1.6264542182146582,
+          "statistic": 142131.0,
+          "p_value": 4.379487378239236e-31,
+          "q_value": 2.8565559609031403e-29,
+          "mean_in_group": 0.679325670003891,
+          "mean_out_group": 0.20992816598835146,
+          "fraction_expressing_in": 0.7314814814814815,
+          "is_technical": false
+        },
+        {
+          "gene": "CCL5",
+          "log2_fold_change": 2.087932284993039,
+          "statistic": 145100.0,
+          "p_value": 1.7590663245264013e-30,
+          "q_value": 1.1115100338101198e-28,
+          "mean_in_group": 1.6299118311316878,
+          "mean_out_group": 0.4625996682531403,
+          "fraction_expressing_in": 0.75,
+          "is_technical": false
+        },
+        {
+          "gene": "IFNG",
+          "log2_fold_change": 3.6249961433258497,
+          "statistic": 109177.0,
+          "p_value": 5.75684583045928e-29,
+          "q_value": 3.527376445208686e-27,
+          "mean_in_group": 0.1369597867683128,
+          "mean_out_group": 0.010295022892046578,
+          "fraction_expressing_in": 0.17592592592592593,
+          "is_technical": false
+        },
+        {
+          "gene": "APOBEC3G",
+          "log2_fold_change": 1.8230682306286299,
+          "statistic": 135365.5,
+          "p_value": 5.4338378643307415e-27,
+          "q_value": 3.231535341669635e-25,
+          "mean_in_group": 0.5486688889839031,
+          "mean_out_group": 0.15232015259658235,
+          "fraction_expressing_in": 0.6111111111111112,
+          "is_technical": false
+        },
+        {
+          "gene": "RPL10",
+          "log2_fold_change": -0.9194037161410925,
+          "statistic": 36590.0,
+          "p_value": 1.6460474893817845e-26,
+          "q_value": 9.50945149579991e-25,
+          "mean_in_group": 2.8407605621549816,
+          "mean_out_group": 3.405895191040083,
+          "fraction_expressing_in": 1.0,
+          "is_technical": true
+        },
+        {
+          "gene": "VIM",
+          "log2_fold_change": -2.062564590995355,
+          "statistic": 38299.0,
+          "p_value": 1.6692737446319777e-25,
+          "q_value": 9.375754199016276e-24,
+          "mean_in_group": 0.38881573191395513,
+          "mean_out_group": 1.2502344599115836,
+          "fraction_expressing_in": 0.37037037037037035,
+          "is_technical": false
+        },
+        {
+          "gene": "ARPC5L",
+          "log2_fold_change": 2.4731153729735094,
+          "statistic": 131402.0,
+          "p_value": 5.242092519338696e-25,
+          "q_value": 2.864732722730498e-23,
+          "mean_in_group": 0.48622561825646293,
+          "mean_out_group": 0.12439182294389046,
+          "fraction_expressing_in": 0.5462962962962963,
+          "is_technical": false
+        },
+        {
+          "gene": "CX3CR1",
+          "log2_fold_change": 2.559864350727917,
+          "statistic": 119501.0,
+          "p_value": 1.377243682856141e-24,
+          "q_value": 7.32838612298715e-23,
+          "mean_in_group": 0.2739195735366256,
+          "mean_out_group": 0.04812284251214171,
+          "fraction_expressing_in": 0.3333333333333333,
+          "is_technical": false
+        },
+        {
+          "gene": "LTB",
+          "log2_fold_change": -3.0398399732005825,
+          "statistic": 39959.0,
+          "p_value": 1.908180911709684e-24,
+          "q_value": 9.89318411147944e-23,
+          "mean_in_group": 0.23526557838475262,
+          "mean_out_group": 1.1722792470688375,
+          "fraction_expressing_in": 0.24074074074074073,
+          "is_technical": false
+        },
+        {
+          "gene": "UBB",
+          "log2_fold_change": 1.0752085607378745,
+          "statistic": 146923.5,
+          "p_value": 6.4380329883611925e-24,
+          "q_value": 3.254425675616583e-22,
+          "mean_in_group": 1.5001863605446286,
+          "mean_out_group": 0.8657624166634607,
+          "fraction_expressing_in": 0.9722222222222222,
+          "is_technical": false
+        },
+        {
+          "gene": "SRGN",
+          "log2_fold_change": 1.0651205648814714,
+          "statistic": 145368.0,
+          "p_value": 1.83737031151565e-23,
+          "q_value": 9.061372609474742e-22,
+          "mean_in_group": 1.411904924445682,
+          "mean_out_group": 0.7021098152677538,
+          "fraction_expressing_in": 0.9351851851851852,
+          "is_technical": false
+        },
+        {
+          "gene": "ID2",
+          "log2_fold_change": 1.336829493345155,
+          "statistic": 140344.5,
+          "p_value": 2.3081044222201584e-23,
+          "q_value": 1.111187414697419e-21,
+          "mean_in_group": 0.9082886201364023,
+          "mean_out_group": 0.3617387500401882,
+          "fraction_expressing_in": 0.8148148148148148,
+          "is_technical": false
+        },
+        {
+          "gene": "RPS8",
+          "log2_fold_change": -1.093063351853727,
+          "statistic": 40573.5,
+          "p_value": 3.192529923182648e-23,
+          "q_value": 1.5012315127151895e-21,
+          "mean_in_group": 1.6590601183750011,
+          "mean_out_group": 2.302803530448874,
+          "fraction_expressing_in": 0.9629629629629629,
+          "is_technical": true
+        },
+        {
+          "gene": "RHOC",
+          "log2_fold_change": 1.2427901244211477,
+          "statistic": 130659.5,
+          "p_value": 5.852762746738355e-23,
+          "q_value": 2.68961051679658e-21,
+          "mean_in_group": 0.49698791680512605,
+          "mean_out_group": 0.1712787698684271,
+          "fraction_expressing_in": 0.5740740740740741,
+          "is_technical": false
+        },
+        {
+          "gene": "EFHD2",
+          "log2_fold_change": 1.6546879161465837,
+          "statistic": 129240.0,
+          "p_value": 3.367211864224917e-22,
+          "q_value": 1.5130005309917294e-20,
+          "mean_in_group": 0.4531418438310976,
+          "mean_out_group": 0.13603799019364685,
+          "fraction_expressing_in": 0.5370370370370371,
+          "is_technical": false
+        },
+        {
+          "gene": "C5orf56",
+          "log2_fold_change": 1.935568521614223,
+          "statistic": 123150.5,
+          "p_value": 5.0818136429868085e-22,
+          "q_value": 2.2337885187215925e-20,
+          "mean_in_group": 0.3338630066977607,
+          "mean_out_group": 0.07788852608245042,
+          "fraction_expressing_in": 0.4074074074074074,
+          "is_technical": false
+        },
+        {
+          "gene": "S100B",
+          "log2_fold_change": 3.4739884229201383,
+          "statistic": 110593.5,
+          "p_value": 1.3630299157886313e-21,
+          "q_value": 5.863928701541728e-20,
+          "mean_in_group": 0.23374731562755727,
+          "mean_out_group": 0.025140664451278667,
+          "fraction_expressing_in": 0.2037037037037037,
+          "is_technical": false
+        },
+        {
+          "gene": "COTL1",
+          "log2_fold_change": -3.6116330743438976,
+          "statistic": 45358.0,
+          "p_value": 1.0407820962569005e-20,
+          "q_value": 4.384294580482194e-19,
+          "mean_in_group": 0.16795935012676097,
+          "mean_out_group": 0.918969818857103,
+          "fraction_expressing_in": 0.2222222222222222,
+          "is_technical": false
+        },
+        {
+          "gene": "RPS19",
+          "log2_fold_change": -0.9414489626326566,
+          "statistic": 43985.0,
+          "p_value": 1.6352280582359022e-20,
+          "q_value": 6.747818640312233e-19,
+          "mean_in_group": 2.105777562768371,
+          "mean_out_group": 2.6909333304239498,
+          "fraction_expressing_in": 1.0,
+          "is_technical": true
+        },
+        {
+          "gene": "C12orf75",
+          "log2_fold_change": 2.0661455197199814,
+          "statistic": 122990.0,
+          "p_value": 2.1467384787792623e-20,
+          "q_value": 8.681410408183336e-19,
+          "mean_in_group": 0.3728641889713429,
+          "mean_out_group": 0.0929716739061924,
+          "fraction_expressing_in": 0.4166666666666667,
+          "is_technical": false
+        }
+      ]
+    },
+    "marker_enrichment": {
+      "B cells": {
+        "state": "B cells",
+        "panel_size_in_universe": 4,
+        "n_top_genes": 50,
+        "n_overlap": 4,
+        "overlap_genes": [
+          "CD79A",
+          "MS4A1",
+          "TCL1A",
+          "CD79B"
+        ],
+        "fold_enrichment": 40.44,
+        "p_value": 3.316423825643722e-07,
+        "universe_size": 2022,
+        "is_enriched": true,
+        "technical_genes_in_top": []
+      },
+      "CD14+ Monocytes": {
+        "state": "CD14+ Monocytes",
+        "panel_size_in_universe": 5,
+        "n_top_genes": 50,
+        "n_overlap": 5,
+        "overlap_genes": [
+          "S100A8",
+          "S100A9",
+          "FCN1",
+          "CD14",
+          "LYZ"
+        ],
+        "fold_enrichment": 40.44,
+        "p_value": 7.55973716450006e-09,
+        "universe_size": 2022,
+        "is_enriched": true,
+        "technical_genes_in_top": [
+          "RPS27A"
+        ]
+      },
+      "CD4 T cells": {
+        "state": "CD4 T cells",
+        "panel_size_in_universe": 2,
+        "n_top_genes": 50,
+        "n_overlap": 2,
+        "overlap_genes": [
+          "LTB",
+          "IL7R"
+        ],
+        "fold_enrichment": 40.44,
+        "p_value": 0.000599540629522555,
+        "universe_size": 2022,
+        "is_enriched": true,
+        "technical_genes_in_top": [
+          "RPS27A",
+          "RPS3A"
+        ]
+      },
+      "CD8 T cells": {
+        "state": "CD8 T cells",
+        "panel_size_in_universe": 2,
+        "n_top_genes": 50,
+        "n_overlap": 0,
+        "overlap_genes": [],
+        "fold_enrichment": 0.0,
+        "p_value": 1.0,
+        "universe_size": 2022,
+        "is_enriched": false,
+        "technical_genes_in_top": []
+      },
+      "Dendritic cells": {
+        "state": "Dendritic cells",
+        "panel_size_in_universe": 4,
+        "n_top_genes": 50,
+        "n_overlap": 3,
+        "overlap_genes": [
+          "FCER1A",
+          "CLEC10A",
+          "CST3"
+        ],
+        "fold_enrichment": 30.33,
+        "p_value": 5.59911128861339e-05,
+        "universe_size": 2022,
+        "is_enriched": true,
+        "technical_genes_in_top": []
+      },
+      "FCGR3A+ Monocytes": {
+        "state": "FCGR3A+ Monocytes",
+        "panel_size_in_universe": 5,
+        "n_top_genes": 50,
+        "n_overlap": 0,
+        "overlap_genes": [],
+        "fold_enrichment": 0.0,
+        "p_value": 1.0,
+        "universe_size": 2022,
+        "is_enriched": false,
+        "technical_genes_in_top": []
+      },
+      "Megakaryocytes": {
+        "state": "Megakaryocytes",
+        "panel_size_in_universe": 5,
+        "n_top_genes": 50,
+        "n_overlap": 5,
+        "overlap_genes": [
+          "GP9",
+          "ITGA2B",
+          "PF4",
+          "PPBP",
+          "TUBB1"
+        ],
+        "fold_enrichment": 40.44,
+        "p_value": 7.55973716450006e-09,
+        "universe_size": 2022,
+        "is_enriched": true,
+        "technical_genes_in_top": []
+      },
+      "NK cells": {
+        "state": "NK cells",
+        "panel_size_in_universe": 3,
+        "n_top_genes": 50,
+        "n_overlap": 3,
+        "overlap_genes": [
+          "GNLY",
+          "KLRD1",
+          "NKG7"
+        ],
+        "fold_enrichment": 40.440000000000005,
+        "p_value": 1.424651000845676e-05,
+        "universe_size": 2022,
+        "is_enriched": true,
+        "technical_genes_in_top": [
+          "HBA1",
+          "RPL10",
+          "RPS8",
+          "RPS19"
+        ]
+      }
+    },
+    "all_states_enriched": false,
+    "states_not_enriched": [
+      "CD8 T cells",
+      "FCGR3A+ Monocytes"
+    ],
+    "model_gene_enrichment": {
+      "logistic": {
+        "per_class_enrichment": {
+          "B cells": {
+            "state": "B cells",
+            "panel_size_in_universe": 4,
+            "n_top_genes": 25,
+            "n_overlap": 4,
+            "overlap_genes": [
+              "CD79A",
+              "MS4A1",
+              "CD79B",
+              "TCL1A"
+            ],
+            "fold_enrichment": 80.88,
+            "p_value": 1.8216570297174593e-08,
+            "universe_size": 2022,
+            "is_enriched": true,
+            "technical_genes_in_top": []
+          },
+          "CD14+ Monocytes": {
+            "state": "CD14+ Monocytes",
+            "panel_size_in_universe": 5,
+            "n_top_genes": 25,
+            "n_overlap": 5,
+            "overlap_genes": [
+              "S100A8",
+              "S100A9",
+              "LYZ",
+              "CD14",
+              "FCN1"
+            ],
+            "fold_enrichment": 80.88,
+            "p_value": 1.895678772253055e-10,
+            "universe_size": 2022,
+            "is_enriched": true,
+            "technical_genes_in_top": []
+          },
+          "CD4 T cells": {
+            "state": "CD4 T cells",
+            "panel_size_in_universe": 2,
+            "n_top_genes": 25,
+            "n_overlap": 2,
+            "overlap_genes": [
+              "LTB",
+              "IL7R"
+            ],
+            "fold_enrichment": 80.88,
+            "p_value": 0.00014682627661776864,
+            "universe_size": 2022,
+            "is_enriched": true,
+            "technical_genes_in_top": [
+              "RPS27A",
+              "RPS8",
+              "RPS3A",
+              "RPS19"
+            ]
+          },
+          "CD8 T cells": {
+            "state": "CD8 T cells",
+            "panel_size_in_universe": 2,
+            "n_top_genes": 25,
+            "n_overlap": 0,
+            "overlap_genes": [],
+            "fold_enrichment": 0.0,
+            "p_value": 1.0,
+            "universe_size": 2022,
+            "is_enriched": false,
+            "technical_genes_in_top": []
+          },
+          "Dendritic cells": {
+            "state": "Dendritic cells",
+            "panel_size_in_universe": 4,
+            "n_top_genes": 25,
+            "n_overlap": 2,
+            "overlap_genes": [
+              "FCER1A",
+              "CLEC10A"
+            ],
+            "fold_enrichment": 40.44,
+            "p_value": 0.0008676380347156866,
+            "universe_size": 2022,
+            "is_enriched": true,
+            "technical_genes_in_top": []
+          },
+          "FCGR3A+ Monocytes": {
+            "state": "FCGR3A+ Monocytes",
+            "panel_size_in_universe": 5,
+            "n_top_genes": 25,
+            "n_overlap": 0,
+            "overlap_genes": [],
+            "fold_enrichment": 0.0,
+            "p_value": 1.0,
+            "universe_size": 2022,
+            "is_enriched": false,
+            "technical_genes_in_top": []
+          },
+          "Megakaryocytes": {
+            "state": "Megakaryocytes",
+            "panel_size_in_universe": 5,
+            "n_top_genes": 25,
+            "n_overlap": 5,
+            "overlap_genes": [
+              "PPBP",
+              "PF4",
+              "GP9",
+              "ITGA2B",
+              "TUBB1"
+            ],
+            "fold_enrichment": 80.88,
+            "p_value": 1.895678772253055e-10,
+            "universe_size": 2022,
+            "is_enriched": true,
+            "technical_genes_in_top": []
+          },
+          "NK cells": {
+            "state": "NK cells",
+            "panel_size_in_universe": 3,
+            "n_top_genes": 25,
+            "n_overlap": 3,
+            "overlap_genes": [
+              "GNLY",
+              "KLRD1",
+              "NKG7"
+            ],
+            "fold_enrichment": 80.88000000000001,
+            "p_value": 1.6717843377270684e-06,
+            "universe_size": 2022,
+            "is_enriched": true,
+            "technical_genes_in_top": []
+          }
+        },
+        "untestable_importance_keys": [],
+        "note": null,
+        "all_classes_enriched": false
+      },
+      "random_forest": {
+        "per_class_enrichment": {},
+        "untestable_importance_keys": [
+          "all_classes"
+        ],
+        "note": "unsigned importances shared across classes (tree ensembles) cannot be attributed to a single state and are listed as untestable",
+        "all_classes_enriched": false
+      }
+    }
+  },
+  "scgpt": {
+    "status": "IMPLEMENTED_NOT_FULLY_EXECUTED",
+    "checkpoint": {
+      "available": false,
+      "reason": "scgpt.checkpoint_dir is not set",
+      "required_files": [
+        "args.json",
+        "vocab.json",
+        "best_model.pt"
+      ],
+      "source": "https://github.com/bowang-lab/scGPT"
+    },
+    "finetune_command": {
+      "command": "python -m scgpt.tasks.cell_annotation '--load-model=<scgpt_checkpoint_dir>' --data-path=/Users/dhanus/claudeGithubWork/scgpt-nk-cell-state-classification/results/pbmc_reference/scgpt_input.h5ad --save-dir=/Users/dhanus/claudeGithubWork/scgpt-nk-cell-state-classification/results/pbmc_reference/scgpt --n-cls=8 --epochs=10 --batch-size=32 --lr=0.0001 --max-seq-len=1200 --n-bins=51 --include-zero-gene=False --freeze-encoder=True",
+      "checkpoint": "<scgpt_checkpoint_dir>",
+      "vocabulary": "<scgpt_checkpoint_dir>/vocab.json",
+      "n_classes": 8,
+      "settings": {
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.0001,
+        "max_seq_len": 1200,
+        "n_bins": 51,
+        "freeze_encoder": true,
+        "dry_run": true
+      }
+    },
+    "executed": false,
+    "reason": "no scGPT checkpoint is configured. The pretrained weights are distributed by the scGPT authors under their own terms and are not redistributed by this repository, and fine-tuning additionally requires a GPU. No transformer metric is reported."
+  },
+  "warnings": [
+    "marker enrichment failed for ['CD8 T cells', 'FCGR3A+ Monocytes']: the top differentially expressed genes for these classes are not enriched for their own marker panel. This is expected when a class shares its panel with a sibling subtype \u2014 a one-vs-rest comparison cannot recover markers the comparison group also expresses \u2014 and is a statement about panel resolution, not about the classifier's accuracy",
+    "mitochondrial or ribosomal genes appear among the top differentially expressed genes for ['CD14+ Monocytes', 'CD4 T cells', 'NK cells']; these usually track library size and cell stress rather than the biology being classified"
+  ],
+  "provenance": {
+    "timestamp_utc": "2026-09-17T09:34:48+00:00",
+    "python": "3.14.6",
+    "platform": "macOS-26.3-arm64-arm-64bit-Mach-O",
+    "git_commit": null,
+    "packages": {
+      "numpy": "2.5.1",
+      "scipy": "1.18.0",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0",
+      "scanpy": "1.12.4",
+      "anndata": "0.13.3.post0",
+      "scgpt": null
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Conda environment for nkstate.
+#
+# The scGPT extra is deliberately absent: fine-tuning needs torch with CUDA
+# matched to the host driver plus a checkpoint the authors distribute
+# themselves, so pinning it here would produce an environment that installs
+# but cannot run. See docs/SCGPT.md.
+name: nkstate
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy>=1.24
+  - scipy>=1.10
+  - pandas>=2.0
+  - scikit-learn>=1.3
+  - pyyaml>=6.0
+  - pip
+  - pip:
+      - scanpy>=1.9
+      - anndata>=0.9
+      - pytest>=7.4
+      - ruff>=0.4

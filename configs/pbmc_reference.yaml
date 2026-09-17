@@ -1,0 +1,66 @@
+# Real-data reference run: cell-type classification on scanpy's pbmc3k.
+#
+# Why cell type and not NK functional state:
+#
+# pbmc3k ships eight CURATED cell-type labels (Zheng et al. 2017, annotated by
+# scanpy) that are independent of anything in this package. That makes it a
+# genuine test — the classifier is scored against labels it had no hand in
+# producing. The NK functional-state task has no such labels in any public
+# dataset used here, so scoring a model on state would mean scoring it against
+# this package's own marker rule, which measures agreement with the rule rather
+# than accuracy. Those runs are reported as marker_pseudo_label and are not
+# treated as accuracy against ground truth.
+#
+# pbmc3k is also a SINGLE donor. A donor-grouped split is therefore impossible
+# and split.kind is cell_random: these metrics describe within-donor
+# separability and say nothing about generalisation to a new donor. The
+# pipeline attaches that caveat to its own output rather than relying on this
+# comment. See configs/synthetic_donor_split.yaml for the donor-grouped case.
+#
+# The matrix used is .raw (log1p of CPM-normalised counts, 13714 genes), not
+# the distributed .X, which is z-scored over 1838 HVGs.
+name: pbmc_reference
+output_dir: ../results/pbmc_reference
+
+data:
+  source: reference_pbmc
+  donor_key: donor_id
+  label_key: cell_type
+  # Already QC'd upstream (2638 cells survive the authors' filters), so these
+  # thresholds are permissive by design: re-filtering a filtered dataset on
+  # counts computed from log-normalised values would remove cells for the
+  # wrong reason.
+  min_genes: 0
+  min_counts: 0
+  max_mito_fraction: 1.0
+  min_cells_per_gene: 3
+  n_top_genes: 2000
+  subset_nk: false
+
+split:
+  kind: cell_random
+  test_fraction: 0.2
+  val_fraction: 0.1
+  seed: 0
+
+labels:
+  source: annotation
+
+models:
+  baselines: [logistic, random_forest, mlp, marker_score]
+  seed: 0
+  balanced: true
+
+scgpt:
+  # Unset: the pretrained weights are distributed by the scGPT authors under
+  # their own terms and are not redistributed here. With no checkpoint the
+  # scGPT stage reports the command it would run and why it did not run.
+  checkpoint_dir: null
+  max_seq_len: 1200
+  n_bins: 51
+  freeze_encoder: true
+
+interpret:
+  top_n_genes: 50
+  min_cells_per_state: 10
+  enabled: true

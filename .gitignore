@@ -1,0 +1,64 @@
+# Byte-compiled and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# Environments
+.venv/
+venv/
+env/
+.python-version
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials and secrets: never commit these
+.env
+.env.*
+*.pem
+*.key
+*_rsa
+*_rsa.pub
+.netrc
+credentials.json
+token.json
+
+# Downloaded data. Datasets are fetched on demand and are not vendored;
+# see data/README.md for exactly what is downloaded and from where.
+data/scanpy/
+data/cache/
+data/*.h5ad
+data/*.h5
+data/*.mtx
+data/*.loom
+data/*.zarr/
+
+# scGPT checkpoints. The weights are distributed by the scGPT authors under
+# their own terms and are not redistributed here.
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Run outputs. Regenerate with scripts/ and the configs.
+#
+# `results/*` rather than `results/`: git does not descend into an excluded
+# directory, so a negation below an excluded directory never matches. Excluding
+# the *contents* leaves the directory traversable so the exception works.
+results/*
+outputs/
+# ...except the reference results the documentation quotes, which are committed
+# so every number in docs/VALIDATION.md is traceable to the run that produced it.
+!results/reference/
+*.log
+slurm-*.out
+
+# Notebooks
+.ipynb_checkpoints/
