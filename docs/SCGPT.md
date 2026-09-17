@@ -61,16 +61,18 @@ scgpt:
 
 4. Check the vocabulary before spending GPU time. This is worth doing first —
    if marker genes are missing from the vocabulary, the model cannot see them
-   and the run is compromised before it starts:
+   and the run is compromised before it starts. Substitute your own config
+   path for `MY_CONFIG` throughout; no such file ships with the repository:
 
 ```bash
-nkstate tokenise -c configs/your_config.yaml | jq '.n_pinned_marker_genes, .seq_len'
+MY_CONFIG=configs/pbmc_reference.yaml   # your config, with scgpt.* filled in
+nkstate tokenise -c "$MY_CONFIG" | jq '.n_pinned_marker_genes, .seq_len'
 ```
 
 5. Build and inspect the command, then run it:
 
 ```bash
-nkstate scgpt -c configs/your_config.yaml | jq -r .finetune_command.command
+nkstate scgpt -c "$MY_CONFIG" | jq -r .finetune_command.command
 ```
 
 ## A note on `freeze_encoder`

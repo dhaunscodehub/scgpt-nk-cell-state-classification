@@ -15,7 +15,11 @@
 # their own terms and which is not redistributed by this repository. No
 # transformer metric appears anywhere in this repository. See docs/SCGPT.md.
 #
-#   sbatch hpc/slurm/finetune_scgpt.sbatch configs/your_config.yaml
+#   sbatch hpc/slurm/finetune_scgpt.sbatch <your-config>.yaml
+#
+# No scGPT-ready config ships with the repository: it would have to name a
+# checkpoint path that does not exist here. Copy configs/pbmc_reference.yaml
+# and fill in scgpt.checkpoint_dir and scgpt.vocabulary_path.
 #
 # GPU memory: a 1200-gene sequence at batch size 32 needs roughly 24 GB for a
 # full fine-tune. With freeze_encoder: true (a linear probe, and usually the
